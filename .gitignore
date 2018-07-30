@@ -1,6 +1,10 @@
 /node_modules
-/public
 /storage/*.key
+/public/css
+/public/fonts
+/public/images
+/public/js
+/public/vendor
 /vendor
 /.idea
 /.vscode
