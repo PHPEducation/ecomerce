@@ -22,5 +22,16 @@ return [
     'order_date' => 'Ngày đặt hàng',
     'amount' => 'Tổng tiền',
     'user' => 'Người dùng',
-    'order' => 'Đơn hàng'
+    'order' => 'Đơn hàng',
+    'categories' => 'Quản lý danh mục',
+    'category' => 'Danh mục',
+    'products' => 'Quản lý sản phẩm',
+    'product' => 'Sản phẩm',
+    'addnew' => 'Thêm mới',
+    'status' => 'Trạng thái',
+    'brand' => 'Thương hiệu',
+    'posts' => 'Quản lý bài đăng',
+    'sliders' => 'Quản lý Slider',
+    'orders' => 'Quản lý đơn hàng',
+    'users' => 'Quản lý người dùng'
 ];
