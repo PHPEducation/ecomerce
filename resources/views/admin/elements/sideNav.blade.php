@@ -6,7 +6,7 @@
                 <span class="icon-holder">
                     <i class="mdi mdi-gauge"></i>
                 </span>
-                <span class="title">Trang chủ</span>
+                <span class="title">{{ trans('home.home') }}</span>
             </a>
         </li>
         <li class="nav-item dropdown">
@@ -14,20 +14,20 @@
                 <span class="icon-holder">
                     <i class="mdi mdi-image-filter-drama"></i>
                 </span>
-                <span class="title">Quản lý sản phẩm</span>
+                <span class="title">{{ trans('home.products') }}</span>
                 <span class="arrow">
                     <i class="mdi mdi-chevron-right"></i>
                 </span>
             </a>
             <ul class="dropdown-menu">
                 <li>
-                    <a href="{{ url('/admin/categories') }}">Danh mục</a>
+                    <a href="{{ url('/admin/categories') }}">{{ trans('home.category') }}</a>
                 </li>
                 <li>
-                    <a href="{{ url('admin/products') }}">Sản phẩm</a>
+                    <a href="{{ url('admin/products') }}">{{ trans('home.product') }}</a>
                 </li>
                 <li>
-                    <a href="{{ url('admin/brands') }}">Thương hiệu</a>
+                    <a href="{{ url('admin/brands') }}">{{ trans('home.brand') }}</a>
                 </li>
             </ul>
         </li>
@@ -36,7 +36,7 @@
                 <span class="icon-holder">
                     <i class="mdi mdi-vector-arrange-above"></i>
                 </span>
-                <span class="title">Quản lý bài đăng</span>
+                <span class="title">{{ trans('home.posts') }}</span>
             </a>
         </li>
         <li class="nav-item dropdown">
@@ -44,7 +44,7 @@
                 <span class="icon-holder">
                     <i class="mdi mdi-compass-outline"></i>
                 </span>
-                <span class="title">Quản lý slider</span>
+                <span class="title">{{ trans('home.sliders') }}</span>
             </a>
         </li>
         <li class="nav-item dropdown">
@@ -52,7 +52,7 @@
                 <span class="icon-holder">
                     <i class="mdi mdi-grid-large"></i>
                 </span>
-                <span class="title">Quản lý đơn hàng</span>
+                <span class="title">{{ trans('home.orders') }}</span>
             </a>
         </li>
         <li class="nav-item dropdown">
@@ -60,7 +60,7 @@
                 <span class="icon-holder">
                     <i class="mdi mdi-file-outline"></i>
                 </span>
-                <span class="title">Quản lý người dùng</span>
+                <span class="title">{{ trans('home.users') }}</span>
             </a>
         </li>
         <div class="ps-scrollbar-x-rail">
