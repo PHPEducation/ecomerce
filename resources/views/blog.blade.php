@@ -33,21 +33,21 @@
                                     <div class="row">
                                         <div class="col-sm-5">
                                             <div class="entry-thumb">
-                                                <a href="{{  url($post->slug)  }}">
+                                                <a href="{{ url($post->slug) }}">
                                                     <figure>
-                                                        <img src="{{  asset('images/blog-img1.jpg')  }}" alt="Blog">
+                                                        <img src="{{ asset('images/blog-img1.jpg') }}" alt="Blog">
                                                     </figure>
                                                 </a>
                                             </div>
                                         </div>
                                         <div class="col-sm-7">
                                             <h3 class="entry-title">
-                                                <a href="{{  url($post->slug)  }}">{{  $post->title  }}</a>
+                                                <a href="{{ url($post->slug) }}">{{ $post->title }}</a>
                                             </h3>
                                             <div class="entry-meta-data">
                                                 <span class="author">
                                                     <i class="fa fa-user"></i>
-                                                    &nbsp; by: <a href="#">{{  $post->author  }}</a>
+                                                    &nbsp; by: <a href="#">{{ $post->author }}</a>
                                                 </span>
                                                 <span class="cat">
                                                     <i class="fa fa-folder"></i>
@@ -60,7 +60,7 @@
                                                 </span>
                                                 <span class="date">
                                                     <i class="fa fa-calendar"></i>
-                                                    &nbsp; {{  $post->date  }}
+                                                    &nbsp; {{ $post->date }}
                                                 </span>
                                             </div>
 
@@ -72,7 +72,7 @@
                                                 <i class="fa fa-star-o"></i>&nbsp; <span>(5 votes)</span>
                                             </div>
 
-                                            <div class="entry-excerpt">{{  $post->content  }}</div>
+                                            <div class="entry-excerpt">{{ $post->content }}</div>
                                             <a href="{{ url($post->slug) }}" class="read-more">Read more&nbsp; <i class="fa fa-angle-double-right"></i></a>
                                         </div>
                                     </div>
@@ -212,12 +212,12 @@
                         </div>
                         <div class="block-content">
                             <div class="tags-list">
-                                <a href="#">{{ __('Jwellery') }}</a>
+                                <a href="#">{{ __('jwellery') }}</a>
                                 <a href="#">{{ __('Bag') }}</a>
-                                <a href="#">{{ __('Clothing') }}</a>
-                                <a href="#">{{ __('Shoes') }}</a>
-                                <a href="#">{{ __('Watches') }}</a>
-                                <a href="#">{{ __('Beauty') }}</a>
+                                <a href="#">{{ __('clothing') }}</a>
+                                <a href="#">{{ __('shoes') }}</a>
+                                <a href="#">{{ __('watches') }}</a>
+                                <a href="#">{{ __('beauty') }}</a>
                                 <a href="#">{{ __('Accessories') }}</a>
                             </div>
                             <div class="actions">
