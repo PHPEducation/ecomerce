@@ -1,4 +1,4 @@
-@extends('master')  
+@extends('master')
 
 @section('content')
 <div class="content-wrapper bg-color">
@@ -43,16 +43,16 @@
                             <div class="col-md-6 col-md-offset-4">
                                 <div class="checkbox">
                                     {!! Form::checkbox('remember', '1', false) !!}
-                                    {!! Form::label('', trans('auth.remember')) !!}
+                                    {!! Form::label('', trans('remember')) !!}
                                 </div>
                             </div>
                         </div>
                         {{-- Forgot --}}
                         <div class="form-group">
                             <div class="col-md-8 col-md-offset-4">
-                                {!! Form::submit( trans('auth.login'), ['class' => 'btn btn-primary']) !!}
+                                {!! Form::submit( trans('login'), ['class' => 'btn btn-primary']) !!}
                                 <a class="btn btn-link" href="{{-- {{ route('password.request') }} --}}">
-                                    {!! trans('auth.forgot') !!}
+                                    {!! trans('forgot') !!}
                                 </a>
                             </div>
                         </div>

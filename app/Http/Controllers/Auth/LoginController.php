@@ -42,4 +42,7 @@ class LoginController extends Controller
     {
         return view('auth.login');
     }
+    public function postLogin(Request $request){
+        return redirect('/');
+    }
 }

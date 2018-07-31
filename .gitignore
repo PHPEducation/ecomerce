@@ -9,6 +9,7 @@
 /.idea
 /.vscode
 /.vagrant
+/.resources/view/auth/passwords
 Homestead.json
 Homestead.yaml
 npm-debug.log
