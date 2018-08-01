@@ -33,5 +33,9 @@ return [
     'posts' => 'Quản lý bài đăng',
     'sliders' => 'Quản lý Slider',
     'orders' => 'Quản lý đơn hàng',
-    'users' => 'Quản lý người dùng'
+    'users' => 'Quản lý người dùng',
+    'parent_category' => 'Danh mục cha',
+    'cancel' => 'Hủy',
+    'no_parent_category' => 'Không có danh mục cha',
+    'none' => 'Không'
 ];

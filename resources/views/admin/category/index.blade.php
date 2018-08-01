@@ -24,6 +24,7 @@
                 <tr>
                     <th scope="col">#</th>
                     <th scope="col">{{ trans('home.category') }}</th>
+                    <th scope="col">{{ trans('home.parent_category') }}</th>
                     <th scope="col"></th>
                 </tr>
                 </thead>
@@ -33,6 +34,13 @@
                         <tr>
                             <th scope="row">{{ $category->id }}</th>
                             <td>{{ $category->name }}</td>
+                            @if($category->parent_id == 0)
+                                <td>{{ trans('home.no_parent_category') }}</td>
+                            @else
+                                <td>
+                                    {{ $category->category->name }}
+                                </td>
+                            @endif
                             <td class="text-center font-size-18">
                                 <a href="{{ url('admin/categories/' . $category->id . '/edit') }}" class="text-gray m-r-15">
                                     <i class="ti-pencil"></i>
