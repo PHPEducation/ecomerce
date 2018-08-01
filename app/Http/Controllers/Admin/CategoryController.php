@@ -49,7 +49,7 @@ class CategoryController extends Controller
     {
         $this->category->create($request->all());
 
-        return redirect('admin/categories');
+        return redirect('admin/categories')->with('success', trans('home.update_success'));
     }
 
     /**
@@ -71,7 +71,11 @@ class CategoryController extends Controller
      */
     public function edit($id)
     {
-        //
+        $category = Category::findOrFail($id);
+        $categories = Category::pluck('name', 'id');
+        $categories->prepend(trans('home.none'), 0);
+
+        return view('admin.category.edit', compact('category', 'categories'));
     }
 
     /**
@@ -81,9 +85,14 @@ class CategoryController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(CategoryFormRequest $request, $id)
     {
-        //
+        $category = Category::findOrFail($id);
+        $category->name = $request->name;
+        $category->parent_id = $request->parent_id;
+        $category->save();
+
+        return redirect('admin/categories')->with('success', trans('home.update_success'));
     }
 
     /**
@@ -94,6 +103,16 @@ class CategoryController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $count_category = Category::where('parent_id', $id)->count();
+        if ($count_category > 0)
+        {
+            return back()->with('error', trans('home.error_delete_category'));
+        } else
+        {
+            $category = Category::findOrFail($id);
+            $category->delete();
+
+            return redirect('admin/categories')->with('success', trans('home.delete_success'));
+        }
     }
 }

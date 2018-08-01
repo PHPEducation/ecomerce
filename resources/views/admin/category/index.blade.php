@@ -10,6 +10,16 @@
             </nav>
         </div>
     </div>
+    @if(session('success'))
+        <div class="alert alert-success">
+            {{ session('success') }}
+        </div>
+    @endif
+    @if(session('error'))
+        <div class="alert alert-danger">
+            {{ session('error') }}
+        </div>
+    @endif
     <p class="text-semibold m-b-20">
         <i class="mdi mdi-plus m-r-5 text-info"></i>
         <a class="text-gray" href="{{ url('admin/categories/create') }}">{{ trans('home.addnew') }}</a>
@@ -42,12 +52,16 @@
                                 </td>
                             @endif
                             <td class="text-center font-size-18">
-                                <a href="{{ url('admin/categories/' . $category->id . '/edit') }}" class="text-gray m-r-15">
+                                {!! Form::open(['method' => 'GET', 'url' => 'admin/categories/' . $category->id . '/edit']) !!}
+                                <button class="text-gray">
                                     <i class="ti-pencil"></i>
-                                </a>
-                                <a href="#" class="text-gray">
+                                </button>
+                                {!! Form::close() !!}
+                                {!! Form::open(['method' => 'DELETE', 'url' => ['admin/categories', $category->id]]) !!}
+                                <button type="submit" class="text-gray" onclick="return confirm('{{ trans('home.confirm_delete') }}');">
                                     <i class="ti-trash"></i>
-                                </a>
+                                </button>
+                                {!! Form::close() !!}
                             </td>
                         </tr>
                     @endforeach
