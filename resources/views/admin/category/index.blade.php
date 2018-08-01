@@ -24,22 +24,38 @@
                 <tr>
                     <th scope="col">#</th>
                     <th scope="col">{{ trans('home.category') }}</th>
+                    <th scope="col">{{ trans('home.status') }}</th>
                     <th scope="col"></th>
                 </tr>
                 </thead>
                 <tbody>
-                @if( isset($categories) )
-                    @foreach($categories as $category)
-                        <tr>
-                            <td>{{ $category->id }}</td>
-                            <td>{{ $category->name }}</td>
-                            <td class="text-center font-size-18">
-                                <a href="{{ url('admin/categories/'.$category->id.'edit') }}" class="text-gray m-r-15"><i class="ti-pencil"></i></a>
-                                <a href="#" class="text-gray"><i class="ti-trash"></i></a>
-                            </td>
-                        </tr>
-                    @endforeach
-                @endif
+                <tr>
+                    <th scope="row">1</th>
+                    <td>Mark</td>
+                    <td>Otto</td>
+                    <td class="text-center font-size-18">
+                        <a href="{{ url('admin/categories/edit') }}" class="text-gray m-r-15"><i class="ti-pencil"></i></a>
+                        <a href="#" class="text-gray"><i class="ti-trash"></i></a>
+                    </td>
+                </tr>
+                <tr>
+                    <th scope="row">2</th>
+                    <td>Jacob</td>
+                    <td>Thornton</td>
+                    <td class="text-center font-size-18">
+                        <a href="{{ url('admin/categories/edit') }}" class="text-gray m-r-15"><i class="ti-pencil"></i></a>
+                        <a href="#" class="text-gray"><i class="ti-trash"></i></a>
+                    </td>
+                </tr>
+                <tr>
+                    <th scope="row">3</th>
+                    <td>Larry</td>
+                    <td>the Bird</td>
+                    <td class="text-center font-size-18">
+                        <a href="{{ url('admin/categories/edit') }}" class="text-gray m-r-15"><i class="ti-pencil"></i></a>
+                        <a href="#" class="text-gray"><i class="ti-trash"></i></a>
+                    </td>
+                </tr>
                 </tbody>
             </table>
         </div>
