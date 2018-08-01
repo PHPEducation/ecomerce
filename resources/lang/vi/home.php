@@ -37,5 +37,11 @@ return [
     'parent_category' => 'Danh mục cha',
     'cancel' => 'Hủy',
     'no_parent_category' => 'Không có danh mục cha',
-    'none' => 'Không'
+    'none' => 'Không',
+    'edit_category' => 'Chỉnh sửa danh mục',
+    'update' => 'Cập nhật',
+    'update_success' => 'Cập nhật thành công',
+    'confirm_delete' => 'Bạn chắc chắn muốn xóa?',
+    'delete_success' => 'Xóa thành công',
+    'error_delete_category' => 'Không thể xóa danh mục đang có danh mục con'
 ];
