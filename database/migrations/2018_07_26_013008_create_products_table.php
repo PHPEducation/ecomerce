@@ -23,7 +23,7 @@ class CreateProductsTable extends Migration
             $table->string('size');
             $table->string('slug')->nullable();
             $table->integer('status');
-            $table->integer('brand_id');
+            $table->integer('brand_id')->unsigned();
             $table->foreign('brand_id')->references('id')->on('brands');
             $table->timestamps();
         });

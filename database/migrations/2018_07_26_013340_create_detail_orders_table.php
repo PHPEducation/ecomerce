@@ -18,9 +18,9 @@ class CreateDetailOrdersTable extends Migration
             $table->double('price', 11, 3);
             $table->integer('quantity');
             $table->integer('discount');
-            $table->integer('product_id');
+            $table->integer('product_id')->unsigned();
             $table->foreign('product_id')->references('id')->on('products');
-            $table->integer('order_id');
+            $table->integer('order_id')->unsigned();
             $table->foreign('order_id')->references('id')->on('orders');
             $table->timestamps();
         });

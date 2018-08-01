@@ -19,11 +19,11 @@ class CreateOrdersTable extends Migration
             $table->string('email');
             $table->string('address');
             $table->integer('status');
-            $table->integer('user_id');
+            $table->integer('user_id')->unsigned();
             $table->foreign('user_id')->references('id')->on('users');
             $table->dateTime('date');
             $table->double('price_shipping', 11, 3);
-            $table->integer('payment_id');
+            $table->integer('payment_id')->unsigned();
             $table->foreign('payment_id')->references('id')->on('payments');
             $table->timestamps();
         });

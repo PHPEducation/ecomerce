@@ -17,9 +17,9 @@ class CreateReviewsTable extends Migration
             $table->increments('id');
             $table->text('content');
             $table->integer('parent_id');
-            $table->integer('user_id');
+            $table->integer('user_id')->unsigned();
             $table->foreign('user_id')->references('id')->on('users');
-            $table->integer('product_id');
+            $table->integer('product_id')->unsigned();
             $table->foreign('product_id')->references('id')->on('products');
             $table->integer('price_vote')->nullable();
             $table->integer('quality_vote')->nullable();
