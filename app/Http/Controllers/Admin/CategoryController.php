@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Admin;
 
 use App\Category;
+use App\Http\Requests\CategoryFormRequest;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 
@@ -13,6 +14,11 @@ class CategoryController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
+    public function __construct(Category $category)
+    {
+        $this->category = $category;
+    }
+
     public function index()
     {
         $categories = Category::all();
@@ -27,7 +33,10 @@ class CategoryController extends Controller
      */
     public function create()
     {
-        //
+        $categories = Category::pluck('name', 'id');
+        $categories->prepend(trans('home.none'), 0);
+
+        return view('admin.category.create', compact('categories'));
     }
 
     /**
@@ -36,9 +45,11 @@ class CategoryController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(CategoryFormRequest $request)
     {
-        //
+        $this->category->create($request->all());
+
+        return redirect('admin/categories');
     }
 
     /**
