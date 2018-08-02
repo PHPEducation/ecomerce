@@ -6,34 +6,41 @@ use Illuminate\Http\Request;
 
 class PageController extends Controller
 {
-    public  function home()
+    public function home()
     {
         return view('home');
     }
 
-    public  function shop()
+    public function shop()
     {
         return view('shop-grid');
     }
 
-    public  function shoplist()
+    public function shoplist()
     {
         return view('shoplist');
     }
 
-    public  function blog(){
+    public function blog()
+    {
         $posts = Post::paginate(4);
 
         return view('blog', compact('posts'));
     }
 
-    public  function shoppingcart()
+    public function shoppingcart()
     {
         return view('cart');
     }
 
-    public  function viewcart()
+    public function viewcart()
     {
         return view('viewcart');
+    }
+
+    public function showDetailPost($slug)
+    {
+        $post = Post::where('slug', $slug)->first();
+        return view('show-detail-post', compact('post'));
     }
 }

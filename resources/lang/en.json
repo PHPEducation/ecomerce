@@ -5,6 +5,7 @@
     "username": "Username",
     "cate": "Categories",
     "home": "Home",
+    "home_pages": "Home",
     "homeshop1": "Home Shop 1",
     "homeshop2": "Home Shop 2",
     "homeshop3": "Home Shop 3",
@@ -276,5 +277,6 @@
     "You are logged in!:": "You are logged in!:",
     "Showing 1 to 8 of 25 (2 Pages)": "Showing 1 to 8 of 25 (2 Pages)",
     "passFailed": "Your password is not right",
-    "Account Information": "Account Information"
+    "Account Information": "Account Information",
+    "LogOut": "LogOut"
 }
