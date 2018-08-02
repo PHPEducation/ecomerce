@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Admin;
 
 use App\Brand;
 use App\Http\Requests\BrandFormRequest;
+use App\Product;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 
@@ -74,7 +75,9 @@ class BrandController extends Controller
      */
     public function edit($id)
     {
-        //
+        $brand = Brand::findOrFail($id);
+
+        return view('admin.brand.edit', compact('brand'));
     }
 
     /**
@@ -84,9 +87,14 @@ class BrandController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(BrandFormRequest $request, $id)
     {
-        //
+        $brand = Brand::findOrFail($id);
+        $brand->name = $request->name;
+        $brand->status = $request->status;
+        $brand->save();
+
+        return redirect('admin/brands')->with('success', trans('home.update_success'));
     }
 
     /**
@@ -97,6 +105,16 @@ class BrandController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $count_product = Product::where('brand_id', $id)->count();
+        if ($count_product > 0)
+        {
+            return back()->with('error', trans('home.error_delete_brand'));
+        } else
+        {
+            $brand = Brand::findOrFail($id);
+            $brand->delete();
+
+            return redirect('admin/brands')->with('success', trans('home.delete_success'));
+        }
     }
 }

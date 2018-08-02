@@ -1,4 +1,5 @@
 <?php
+
 return [
     'home' => 'Trang chủ',
     'category' => 'Danh mục',
@@ -53,5 +54,8 @@ return [
     'next' => 'Sau',
     'hidden' => 'Ẩn',
     'add_success' => 'Thêm mới thành công',
-    'required'
+    'required',
+    'edit_brand' => 'Chỉnh sửa thương hiệu',
+    'edit' => 'Chỉnh sửa',
+    'error_delete_brand' => 'Không thể xóa thương hiệu đang có sản phẩm'
 ];
