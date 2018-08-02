@@ -43,5 +43,15 @@ return [
     'update_success' => 'Cập nhật thành công',
     'confirm_delete' => 'Bạn chắc chắn muốn xóa?',
     'delete_success' => 'Xóa thành công',
-    'error_delete_category' => 'Không thể xóa danh mục đang có danh mục con'
+    'error_delete_category' => 'Không thể xóa danh mục đang có danh mục con',
+    'brands' => 'Quản lý thương hiệu',
+    'brand' => 'Thương hiệu',
+    'show' => 'Hiển thị',
+    'line' => 'dòng mỗi trang',
+    'searching' => 'Tìm kiếm',
+    'previous' => 'Trước',
+    'next' => 'Sau',
+    'hidden' => 'Ẩn',
+    'add_success' => 'Thêm mới thành công',
+    'required'
 ];
