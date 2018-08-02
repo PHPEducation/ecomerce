@@ -10,6 +10,16 @@
             </nav>
         </div>
     </div>
+    @if(session('success'))
+        <div class="alert alert-success">
+            {{ session('success') }}
+        </div>
+    @endif
+    @if(session('error'))
+        <div class="alert alert-danger">
+            {{ session('error') }}
+        </div>
+    @endif
     <p class="text-semibold m-b-20">
         <i class="mdi mdi-plus m-r-5 text-info"></i>
         <a class="text-gray" href="{{ url('admin/brands/create') }}">{{ trans('home.addnew') }}</a>
@@ -47,12 +57,7 @@
                             <table id="dt-opt" class="table table-hover table-xl dataTable no-footer" role="grid" aria-describedby="dt-opt_info">
                                 <thead>
                                 <tr role="row">
-                                    <th>
-                                        <div class="checkbox p-0">
-                                            <input id="selectable1" type="checkbox" class="checkAll" name="checkAll">
-                                            <label for="selectable1"></label>
-                                        </div>
-                                    </th>
+                                    <th>#</th>
                                     <th>{{ trans('home.brand') }}</th>
                                     <th>{{ trans('home.status') }}</th>
                                     <th></th>
@@ -62,12 +67,7 @@
                                 @if(isset($brands))
                                     @foreach($brands as $brand)
                                         <tr role="row" class="odd">
-                                            <td class="sorting_1">
-                                                <div class="checkbox">
-                                                    <input id="selectable2" type="checkbox">
-                                                    <label for="selectable2"></label>
-                                                </div>
-                                            </td>
+                                            <td class="sorting_1">{{ $brand->id }}</td>
                                             <td>{{ $brand->name }}</td>
                                             @if($brand->status == 0)
                                                 <td>{{ trans('home.hidden') }}</td>
