@@ -16,12 +16,12 @@
                             </div>
                         @endif
                        <div class="form-group{{ $errors->has('name') ? ' has-error' : '' }}">
-                           {!! Form::label('name', __('username'), ['class' => 'col-md-4 control-label']) !!}
+                           {!! Form::label('email', __('username'), ['class' => 'col-md-4 control-label']) !!}
                             <div class="col-md-6">
-                                {!! Form::text('name', '' , ['class' => 'form-control', 'id' => 'name']) !!}
-                                @if ($errors->has('name'))
+                                {!! Form::text('email', '' , ['class' => 'form-control', 'id' => 'email']) !!}
+                                @if ($errors->has('email'))
                                     <span class="help-block">
-                                        <strong>{{ $errors->first('name') }}</strong>
+                                        <strong>{{ $errors->first('email') }}</strong>
                                     </span>
                                 @endif
                             </div>

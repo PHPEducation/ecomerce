@@ -13,5 +13,4 @@ class Slider extends Model
         return $this->morphMany('App\Image', 'iamgetable');
     }
 
-
 }

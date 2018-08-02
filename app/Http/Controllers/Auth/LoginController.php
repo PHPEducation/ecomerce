@@ -5,6 +5,10 @@ namespace App\Http\Controllers\Auth;
 use App\Http\Controllers\Controller;
 use Illuminate\Foundation\Auth\AuthenticatesUsers;
 use Illuminate\Http\Request;
+use App\Http\Requests\LoginRequest;
+use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Validator;
+use Illuminate\Foundation\Validation\ValidatesRequests;
 
 class LoginController extends Controller
 {
@@ -18,9 +22,8 @@ class LoginController extends Controller
     | to conveniently provide its functionality to your applications.
     |
     */
-
+    use ValidatesRequests;
     use AuthenticatesUsers;
-
     /**
      * Where to redirect users after login.
      *
@@ -37,12 +40,14 @@ class LoginController extends Controller
     {
         $this->middleware('guest')->except('logout');
     }
-
     public function showLoginForm()
     {
         return view('auth.login');
+
     }
-    public function postLogin(Request $request){
+    public function logout()
+    {
+        Auth::logout();
         return redirect('/');
     }
 }
