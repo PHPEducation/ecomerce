@@ -49,7 +49,7 @@ class CategoryController extends Controller
     {
         $this->category->create($request->all());
 
-        return redirect('admin/categories')->with('success', trans('home.update_success'));
+        return redirect('admin/categories')->with('success', trans('home.add_success'));
     }
 
     /**

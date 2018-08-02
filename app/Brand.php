@@ -12,4 +12,19 @@ class Brand extends Model
     {
         return $this->hasMany('App\Product');
     }
+
+    public function scopeSearch($query, $value)
+    {
+        return $query->where('name', 'like', "%$value%");
+    }
+
+    public function scopeOrderById($query, $value)
+    {
+        return $query->orderBy('id', $value)->get();
+    }
+
+    public function scopeResult($query)
+    {
+        return $query->where('id', '>', 0);
+    }
 }
