@@ -2,13 +2,24 @@
 
 return [
     'required' => ':attribute không được để trống',
+    'numeric' => ':attribute phải là số',
+    'integer' => ':attribute phải là số nguyên',
     'min' => [
-        'numeric' => ':attribute phải lớn hơn hoặc 3 :min.',
+        'numeric' => ':attribute phải lớn hơn :min.',
         'file'    => ':attribute phải lớn hơn hoặc bằng :min kilobytes.',
         'string'  => ':attribute phải lớn hơn hoặc bằng :min ký tự.',
         'array'   => ':attribute ít nhất :min phần tử.',
     ],
+    'max' => [
+        'numeric' => ':attribute phải bé hơn :max.',
+        'file'    => ':attribute phải bé hơn hoặc bằng :max kilobytes.',
+        'string'  => ':attribute phải bé hơn hoặc bằng :max ký tự.',
+        'array'   => ':attribute nhiều nhất :max phần tử.',
+    ],
     'attributes' => [
-        'name' => 'Tên'
+        'name' => 'Tên',
+        'price' => 'Giá',
+        'discount' => 'Giảm giá',
+        'description' => 'Mô tả',
     ]
 ];

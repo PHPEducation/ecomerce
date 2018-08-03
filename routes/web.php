@@ -14,5 +14,6 @@ Route::group(['prefix' => '/admin'], function ()
     Route::get('/', 'Admin\DashboardController@index');
     Route::resource('categories', 'Admin\CategoryController');
     Route::resource('brands', 'Admin\BrandController');
+    Route::resource('products', 'Admin\ProductController');
 });
 Route::get('/{slug}', 'PageController@showDetailPost');
