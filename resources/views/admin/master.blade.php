@@ -85,6 +85,7 @@
 <script src="{{ asset('vendor/summernote/dist/summernote-bs4.min.js') }}"></script>
 <script src="{{ asset('vendor/bootstrap-datepicker/dist/js/bootstrap-datepicker.js') }}"></script>
 <script src="{{ asset('js/forms/form-elements.js') }}"></script>
+<script src="{{ asset('js/myjs.js') }}"></script>
 
 </body>
 </html>
