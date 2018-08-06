@@ -65,9 +65,7 @@
                         @include('admin.elements.footer')
                     </div>
                 </footer>
-                <!-- Footer END -->
             </div>
-            <!-- Page Container END -->
         </div>
     </div>
 @show

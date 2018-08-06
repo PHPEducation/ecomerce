@@ -3,6 +3,8 @@
 namespace App\Http\Controllers\Auth;
 
 use App\User;
+use App\DumpProduct;
+use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Validator;
@@ -35,9 +37,22 @@ class RegisterController extends Controller
      *
      * @return void
      */
-    public function __construct()
+    public function __construct(Request $req)
     {
         $this->middleware('guest');
+        $dumpProduct = new DumpProduct();
+        try {
+            $product = $dumpProduct->where('product_id', $req->addToCart)->firstOrFail();
+            $product->soluong += isset($req->soluong) ? $req->soluong : 1;
+            $product->save();
+        } catch (ModelNotFoundException $e) {
+            $dumpProduct->product_id = $req->addToCart;
+            $dumpProduct->soluong = isset($req->soluong) ? $req->soluong : 1;
+            $dumpProduct->save();
+        }
+
+        return back();
+
     }
 
     /**
@@ -72,8 +87,11 @@ class RegisterController extends Controller
             'phone' => $data['phone'],
             'address' => $data['address'],
             'role' => config('role.role.user'),
+            'email' => $data['email'],
+            'phone' => $data['phone'],
+            'address' => $data['address'],
+            'role' => 3,
             'password' => Hash::make($data['password']),
         ]);
-
     }
 }

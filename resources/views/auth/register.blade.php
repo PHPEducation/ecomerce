@@ -1,16 +1,16 @@
 @extends('master')
 @section('content')
-<div class="main-container col2-right-layout">
-    <div class="main container">
-        <div class="container">
-            <div class="row">
-                <div class="page-title">
-                    <h2>{!! __('Account Information') !!}</h2>
-                </div>
-                <div class="col-md-9 justify-content-center">
-                    <div class="card">
-                        <div class="card-body">
-                            {!! Form::open(['method' => 'POST', 'route' => 'register', 'class' => 'formregister']) !!}
+    <div class="main-container col2-right-layout">
+        <div class="main container">
+            <div class="container">
+                <div class="row">
+                    <div class="page-title">
+                        <h2>{!! __('Account Information') !!}</h2>
+                    </div>
+                    <div class="col-md-9 justify-content-center">
+                        <div class="card">
+                            <div class="card-body">
+                                {!! Form::open(['method' => 'POST', 'route' => 'register', 'class' => 'formregister']) !!}
                                 <div class="form-group row {{ $errors->has('name') ? ' has-error' : '' }}">
                                     <div class="col-md-2">
                                         {!! Form::label('name', __('name')) !!}
@@ -25,7 +25,7 @@
                                     </div>
                                 </div>
                                 <div class="form-group row {{ $errors->has('email') ? ' has-error' : '' }} ">
-                                   <div class="col-md-2">
+                                    <div class="col-md-2">
                                         {!! Form::label('email', __('email')) !!}
                                     </div>
                                     <div class="col-md-6">
@@ -90,12 +90,11 @@
                                     </div>
                                 </div>
                             {!! Form::close() !!}
-                            <!-- </form> -->
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
     </div>
-</div>
 @endsection

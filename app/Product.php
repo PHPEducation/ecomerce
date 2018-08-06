@@ -30,8 +30,14 @@ class Product extends Model
 
     public function images()
     {
-        return $this->morphMany('App\Image', 'imagetable');
+        return $this->morphMany(Image::class, 'imagetable');
     }
+
+    public function dumpProducts()
+    {
+        return $this->hasMany(DumpProduct::class);
+    }
+
 
     public function scopeResult($query)
     {
