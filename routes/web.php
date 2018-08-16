@@ -12,7 +12,24 @@
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('master_admin');
+});
+Route::group(['prefix'=>'admin'], function() {
+    Route::group(['prefix'=>'users'], function() {
+        Route::get('/listUser', 'UserController@getlistUser')->name('listUser');
+        Route::get('/addUser', 'UserController@getaddUser')->name('addUser');
+        Route::get('/editUser', 'UserController@geteditUser')->name('editUser');
+    });
+    Route::group(['prefix'=>'product'], function() {
+        Route::get('/listUser', 'ProductController@getlistProduct')->name('listProduct');
+        Route::get('/addUser', 'ProductController@getaddProduct')->name('addProduct');
+        Route::get('/editUser', 'ProductController@geteditProduct')->name('editProduct');
+    });
+    Route::group(['prefix'=>'category'], function() {
+        Route::get('/listUser', 'CategoryController@getlistCategory')->name('listCategory');
+        Route::get('/addUser', 'CategoryController@getaddCategory')->name('addCategory');
+        Route::get('/editUser', 'CategoryController@geteditCategory')->name('editCategory');
+    });
 });
 
 Route::get('/index', 'PageController@getIndex')->name('trangchu');
