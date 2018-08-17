@@ -4,6 +4,8 @@
 /public/css
 /public/image
 /public/storage
+/public/admin_asset
+/storage/logs/
 /storage/*.key
 /vendor
 /.idea
