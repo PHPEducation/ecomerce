@@ -4,6 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="csrf-token" content="{{ csrf_token() }}">
     <title>Laravel </title>
     <link href='http://fonts.googleapis.com/css?family=Dosis:300,400' rel='stylesheet' type='text/css'>
     <link href='http://fonts.googleapis.com/css?family=Open+Sans:400,300' rel='stylesheet' type='text/css'>
@@ -19,9 +20,9 @@
 <body>
     @include('header')
     <div class="rev-slider">
-         @yield('content')
+        @yield('content')
     </div>
-     @include('footer')
+        @include('footer')
     <script src="{{ asset('assets/dest/js/jquery.js') }}"></script>
     <script src="{{ asset('assets/dest/vendors/jqueryui/jquery-ui-1.10.4.custom.min.js') }}"></script>
     <script src="http://netdna.bootstrapcdn.com/bootstrap/3.1.0/js/bootstrap.min.js"></script>
@@ -38,14 +39,15 @@
     <script src="{{asset('assets/dest/js/custom2.js') }}"></script>
     <script>
     $(document).ready(function($) {
-        $(window).scroll(function(){
-            if($(this).scrollTop()>150){
-            $(".header-bottom").addClass('fixNav')
-            }else{
-                $(".header-bottom").removeClass('fixNav')
+        $(window).scroll(function() {
+            if($(this).scrollTop() > 150) {
+                $('.header-bottom').addClass('fixNav')
+            } else {
+                $('.header-bottom').removeClass('fixNav')
             }}
         )
     })
     </script>
+    @yield('script')
 </body>
 </html>

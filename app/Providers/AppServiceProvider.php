@@ -23,7 +23,6 @@ class AppServiceProvider extends ServiceProvider
             $typecategories = Category::all();
             $view->with('typecategories', $typecategories);
         });
-
         view()->composer(['header', 'Client.checkout'], function($view){
             if(Session('cart'))
             {

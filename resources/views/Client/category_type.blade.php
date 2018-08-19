@@ -62,7 +62,7 @@
                                          </p>
                                         </div>
                                         <div class="single-item-caption">
-                                            <a class="add-to-cart pull-left" href="{{ route('addToCart') }}"><i class="fa fa-shopping-cart"></i></a>
+                                            <a class="add-to-cart pull-left" href="{{ route('addToCart',$typeProduct->id ) }}"><i class="fa fa-shopping-cart"></i></a>
                                             <a class="beta-btn primary" href="{{ route('detailproduct', $typeProduct->id) }}">{{ trans('home.details') }} <i class="fa fa-chevron-right"></i></a>
                                             <div class="clearfix"></div>
                                         </div>
@@ -98,7 +98,7 @@
                                             </p>
                                         </div>
                                         <div class="single-item-caption">
-                                            <a class="add-to-cart pull-left" href="{{ route('addToCart') }}"><i class="fa fa-shopping-cart"></i></a>
+                                            <a class="add-to-cart pull-left" href="{{ route('addToCart', $catetoryFurther->id) }}"><i class="fa fa-shopping-cart"></i></a>
                                             <a class="beta-btn primary" href="{{ route('detailproduct', $catetoryFurther->id) }}">{{ trans('home.details') }}<i class="fa fa-chevron-right"></i></a>
                                             <div class="clearfix"></div>
                                         </div>
