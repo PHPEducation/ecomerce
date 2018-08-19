@@ -15,6 +15,11 @@ class Product extends Model
 
     public function category()
     {
-        return $this->belongTo('App\category');
+        return $this->belongsTo('App\category');
+    }
+
+    public function comments()
+    {
+        return $this->hasMany('App\Comment');
     }
 }

@@ -4,18 +4,21 @@ namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 
-class BillDetail extends Model
+class Comment extends Model
 {
     protected $guarded = ['id'];
-    protected $table='bill_detail';
 
-    public function bill()
-    {
-        return $this->belongsTo('App\Bill');
-    }
+    protected $fillable = [
+        'user_id', 'product_id', 'content',
+    ];
 
     public function product()
     {
         return $this->belongsTo('App\Product');
+    }
+
+    public function user()
+    {
+        return $this->belongsTo('App\User');
     }
 }

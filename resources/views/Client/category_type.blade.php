@@ -1,7 +1,6 @@
 @extends('master')
 @section('title', 'category_tu')
 @section('content')
-</div> <!-- #header -->
     <div class="inner-header">
         <div class="container">
             <div class="pull-left">
@@ -38,7 +37,7 @@
                                 @foreach($typeproducts as $typeproduct)
                                 <div class="col-sm-4">
                                     <div class="single-item">
-                                         @if($typeproduct->promotion_price ==0)
+                                        @if($typeproduct->promotion_price ==0)
                                             <div class="ribbon-wrapper">
                                                 <div class="ribbon sale">{{ trans('home.sale') }}</div>
                                             </div>
@@ -50,15 +49,15 @@
                                             <p class="single-item-title">{{ $typeproduct->name }}</p>
                                             <p class="single-item-price">
                                             @if($typeproduct->promotion_price ==0)
-                                                <span class="">{{ $typeproduct->price }}</span>
+                                                <span class="">{{ number_format($typeproduct->price) }}</span>
                                             @else
-                                                <span class="flash-del">{{ $typeproduct->price }}</span>
-                                                <span class="flash-sale">{{ $typeproduct->promotion_price }}</span>
+                                                <span class="flash-del">{{ number_format($typeproduct->price) }}</span>
+                                                <span class="flash-sale">{{ number_format($typeproduct->promotion_price) }}</span>
                                             @endif
                                          </p>
                                         </div>
                                         <div class="single-item-caption">
-                                            <a class="add-to-cart pull-left" href="{{ route('addToCart') }}"><i class="fa fa-shopping-cart"></i></a>
+                                            <a class="add-to-cart pull-left" href="{{ route('addToCart',$typeproduct->id ) }}"><i class="fa fa-shopping-cart"></i></a>
                                             <a class="beta-btn primary" href="{{ route('chitietsanpham', $typeproduct->id) }}">{{ trans('home.details') }} <i class="fa fa-chevron-right"></i></a>
                                             <div class="clearfix"></div>
                                         </div>
@@ -92,7 +91,7 @@
                                             </p>
                                         </div>
                                         <div class="single-item-caption">
-                                            <a class="add-to-cart pull-left" href="{{ route('addToCart') }}"><i class="fa fa-shopping-cart"></i></a>
+                                            <a class="add-to-cart pull-left" href="{{ route('addToCart', $catetoryfurther->id) }}"><i class="fa fa-shopping-cart"></i></a>
                                             <a class="beta-btn primary" href="{{ route('chitietsanpham', $catetoryfurther->id) }}">{{ trans('home.details') }}<i class="fa fa-chevron-right"></i></a>
                                             <div class="clearfix"></div>
                                         </div>

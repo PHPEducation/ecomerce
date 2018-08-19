@@ -50,18 +50,21 @@
                                         <p class="single-item-title">{{ $newproduct->name }}</p>
                                         <p class="single-item-price">
                                             @if($newproduct->promotion_price ==0)
-                                                <span class="">{{ $newproduct->price }}</span>
+                                                <span class="">{{ number_format($newproduct->price) }}</span>
                                             @else
-                                                <span class="flash-del">{{ $newproduct->price }}</span>
-                                                <span class="flash-sale">{{ $newproduct->promotion_price }}</span>
+                                                <span class="flash-del">{{ number_format($newproduct->price) }}</span>
+                                                <span class="flash-sale">{{ number_format($newproduct->promotion_price) }}</span>
                                             @endif
                                          </p>
                                     </div>
                                     <div class="single-item-caption">
-                                        <a class="add-to-cart pull-left" href="{{ route('addToCart') }}"><i class="fa fa-shopping-cart"></i></a>
-                                        <a class="beta-btn primary" href="{{ route('chitietsanpham',$newproduct->id ) }}">{{ trans('home.details') }} <i class="fa fa-chevron-right"></i></a>
+                                            <a class="add-to-cart pull-left" href="{{ route('addToCart', $newproduct->id) }}">
+                                                <i class="fa fa-shopping-cart"></i>
+                                            </a>
+                                        <a class="beta-btn primary" href="{{ route('chitietsanpham',$newproduct->id ) }}">{{ trans('home.details') }}
+                                            <i class="fa fa-chevron-right"></i>
+                                        </a>
                                         <div class="clearfix"></div>
-
                                     </div>
                                 </div>
                             </div>
@@ -97,7 +100,7 @@
                                          </p>
                                     </div>
                                     <div class="single-item-caption">
-                                        <a class="add-to-cart pull-left" href="{{ route('addToCart') }}"><i class="fa fa-shopping-cart"></i></a>
+                                        <a class="add-to-cart pull-left" href="{{ route('addToCart', $topproduct->id) }}"><i class="fa fa-shopping-cart"></i></a>
                                         <a class="beta-btn primary" href="{{ route('chitietsanpham', $topproduct->id) }}">{{ trans('home.details') }} <i class="fa fa-chevron-right"></i></a>
                                         <div class="clearfix"></div>
                                     </div>

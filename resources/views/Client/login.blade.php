@@ -16,28 +16,34 @@
 </div>
 <div class="container">
     <div id="content">
-        {!! Form::open(['method' => 'POST','class' => 'beta-form-checkout']) !!}
+        {!! Form::open(['method' => 'POST', 'url' => route('login'), 'class' => 'beta-form-checkout']) !!}
             <div class="row">
                 <div class="col-sm-3"></div>
+                @if(Session::has('flag'))
+                    <div class="alert alert-{{Session::get('flag')}}">{{Session::get('message')}}</div>
+                @else
                 <div class="col-sm-6">
                     <h4>{{ trans('home.login') }}</h4>
                     <div class="space20">&nbsp;</div>
                     <div class="form-block">
                         {!! Form::label('email', trans('home.email'), ['class' => 'col-md-4 control-label']) !!}
-                        {!! Form::text('email', '' , ['class' => 'form-control', 'id' => 'email']) !!}
+                        {!! Form::text('email', '' , ['class' => 'form-control', 'name' => 'email']) !!}
                     </div>
                     <div class="form-block">
                         {!! Form::label('password', trans('home.password'), ['class' => 'col-md-4 control-label']) !!}
-                        {!! Form::password('password', array('class' => 'form-control', 'id' => 'password')) !!}
+                        {!! Form::password('password', array('class' => 'form-control', 'name' => 'password')) !!}
                     </div>
                     <div class="form-block">
                          {!! Form::submit( trans('home.login'), ['class' => 'btn btn-primary col-md-4']) !!}
                     </div>
+                    <div class="row">
+                        <a href="{{ url('auth/facebook') }}">Facebook Login</a>
+                    </div>
                 </div>
                 <div class="col-sm-3"></div>
+                 @endif
             </div>
-            {!! Form::close() !!}
-        </form>
+        {!! Form::close() !!}
     </div>
 </div>
 @endsection
