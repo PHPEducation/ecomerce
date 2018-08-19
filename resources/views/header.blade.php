@@ -70,9 +70,11 @@
                         <li><a href="{{ route('trangchu') }}">{{ trans('home.home') }}</a></li>
                         <li><a href="#">{{ trans('home.product') }}</a>
                             <ul class="sub-menu">
-                                <li><a href="{{ route('loaisanpham') }}">{{ trans('home.product1') }}</a></li>
-                                <li><a href="{{ route('loaisanpham') }}">{{ trans('home.product2') }}</a></li>
-
+                                @foreach($typecategories as $typecategorie)
+                                <li>
+                                    <a href="{{ route('loaisanpham', $typecategorie->id ) }}">{{ $typecategorie->name }}</a>
+                                </li>
+                                @endforeach
                             </ul>
                         </li>
                         <li><a href="{{ route('taikhoan') }}">{{ trans('home.info') }}</a></li>

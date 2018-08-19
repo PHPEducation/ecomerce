@@ -3,22 +3,34 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Slide;
+use App\Product;
+use App\Category;
 
 class PageController extends Controller
 {
     Public function getIndex()
     {
-        return view('Client.home');
+        $slide = Slide::all();
+        $newproducts = Product::where('status', 1)->paginate(4);
+        $topproducts = Product::where('promotion_price', '<>', '0')->paginate(8);
+        return view('Client.home', compact('slide', 'newproducts', 'topproducts'));
+
     }
 
-    Public function categorytype()
+    Public function categorytype($type)
     {
-        return view('Client.category_type');
+        $typeproducts = Product::where('category_id', $type)->get();
+        $catetoryfurthers = Product::where('category_id', '<>', $type)->paginate(6);
+        $categorytypes = Category::all();
+        return view('Client.category_type', compact('typeproducts', 'catetoryfurthers', 'categorytypes'));
     }
 
-    public function detailproduct()
+    public function detailproduct($id)
     {
-        return view('Client.detailproduct');
+        $product = Product::where('id', $id)->first();
+        $productothers = Product::where('category_id' ,'<>', $product->id)->paginate(3);
+        return view('Client.detailproduct', compact('product', 'productothers'));
     }
 
     public function contact()

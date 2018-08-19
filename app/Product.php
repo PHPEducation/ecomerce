@@ -10,11 +10,11 @@ class Product extends Model
 
      public function billdetails()
     {
-        return this->hasMany('App\BillDetail');
+        return $this->hasMany('App\BillDetail');
     }
 
     public function category()
     {
-        return this->belongTo('App\category');
+        return $this->belongTo('App\category');
     }
 }

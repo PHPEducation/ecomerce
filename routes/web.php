@@ -11,9 +11,6 @@
 |
 */
 
-Route::get('/', function () {
-    return view('master_admin');
-});
 Route::group(['prefix'=>'admin'], function() {
     Route::group(['prefix'=>'users'], function() {
         Route::get('/listUser', 'UserController@getlistUser')->name('listUser');
@@ -33,8 +30,8 @@ Route::group(['prefix'=>'admin'], function() {
 });
 
 Route::get('/index', 'PageController@getIndex')->name('trangchu');
-Route::get('/categorytype', 'PageController@categorytype')->name('loaisanpham');
-Route::get('/detailproduct', 'PageController@detailproduct')->name('chitietsanpham');
+Route::get('/categorytype/{type}', 'PageController@categorytype')->name('loaisanpham');
+Route::get('/detailproduct/{id}', 'PageController@detailproduct')->name('chitietsanpham');
 Route::get('/contact', 'PageController@contact')->name('lienhe');
 Route::get('/login', 'PageController@login')->name('dangnhap');
 Route::get('/register', 'PageController@register')->name('dangky');
