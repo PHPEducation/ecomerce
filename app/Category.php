@@ -12,4 +12,19 @@ class Category extends Model
     {
         return $this->hasMany('App\Product');
     }
+
+    public function categories()
+    {
+        return $this->hasMany('App\Category', 'parent_id');
+    }
+
+    public function category()
+    {
+        return $this->belongsTo('App\Category', 'parent_id');
+    }
+
+    public function scopeFilterByParentId($query, $value)
+    {
+        return $query->where('parent_id', $value);
+    }
 }
