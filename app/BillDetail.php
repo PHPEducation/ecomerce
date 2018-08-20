@@ -10,11 +10,11 @@ class BillDetail extends Model
 
     public function bill()
     {
-        return this->belongTo('App\Bill');
+        return this->belongsTo('App\Bill');
     }
 
     public function product()
     {
-        return this->belongTo('App\Product');
+        return this->belongsTo('App\Product');
     }
 }

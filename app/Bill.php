@@ -13,7 +13,7 @@ class Bill extends Model
         return $this->belongsTo('App\User');
     }
 
-    public function billdetails()
+    public function billDetails()
     {
         return $this->hasMany('App\BillDetail');
     }

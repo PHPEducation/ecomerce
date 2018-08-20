@@ -8,13 +8,13 @@ class Product extends Model
 {
     protected $guarded = ['id'];
 
-     public function billdetails()
+     public function billDetails()
     {
-        return this->hasMany('App\BillDetail');
+        return $this->hasMany('App\BillDetail');
     }
 
     public function category()
     {
-        return this->belongTo('App\category');
+        return $this->belongsTo('App\category');
     }
 }
