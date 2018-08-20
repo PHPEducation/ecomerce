@@ -22,13 +22,13 @@
                             <div class="row">
                                 <div class="col">
                                     <div class="text-center">
-                                        <h2 class="font-weight-light">10</h2>
+                                        <h2 class="font-weight-light">{{ $count_user }}</h2>
                                         <span class="m-l-10"><a href="{{ url('admin/users') }}">{{ trans('home.user') }}</a></span>
                                     </div>
                                 </div>
                                 <div class="col">
                                     <div class="text-center">
-                                        <h2 class="font-weight-light">10</h2>
+                                        <h2 class="font-weight-light">{{ $count_order }}</h2>
                                         <span class="status gradient"></span>
                                         <span class="m-l-10"><a href="{{ url('admin/orders') }}">{{ trans('home.order') }}</a></span>
                                     </div>
@@ -37,14 +37,14 @@
                             <div class="row">
                                 <div class="col">
                                     <div class="text-center">
-                                        <h2 class="font-weight-light">10</h2>
+                                        <h2 class="font-weight-light">{{ $count_post }}</h2>
                                         <span class="status gradient"></span>
                                         <span class="m-l-10"><a href="{{ url('admin/posts') }}">{{ trans('home.post') }}</a></span>
                                     </div>
                                 </div>
                                 <div class="col">
                                     <div class="text-center">
-                                        <h2 class="font-weight-light">10</h2>
+                                        <h2 class="font-weight-light">{{ $count_product }}</h2>
                                         <span class="status gradient"></span>
                                         <span class="m-l-10"><a href="{{ url('admin/products') }}">{{ trans('home.product') }}</a></span>
                                     </div>
@@ -80,7 +80,16 @@
                         </tr>
                         </thead>
                         <tbody>
-
+                        @if(isset($orders))
+                            @foreach($orders as $order)
+                                <tr role="row" class="odd">
+                                    <td>{{ $order->name }}</td>
+                                    <td>{{ $order->id }}</td>
+                                    <td>{{ $order->created_at }}</td>
+                                    <td>{{ number_format($order->amount) }} VNĐ</td>
+                                </tr>
+                            @endforeach
+                        @endif
                         </tbody>
                     </table>
                 </div>
