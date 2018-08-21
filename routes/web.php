@@ -18,4 +18,5 @@ Route::group(['prefix' => '/admin'], function ()
 {
     Route::get('/', 'Admin\DashboardController@index');
     Route::resource('categories', 'Admin\CategoryController');
+    Route::resource('brands', 'Admin\BrandController');
 });

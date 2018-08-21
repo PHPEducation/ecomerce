@@ -2,6 +2,7 @@
 
 namespace App\Providers;
 
+use App\Brand;
 use App\Category;
 use Illuminate\Support\ServiceProvider;
 
@@ -16,6 +17,10 @@ class AppServiceProvider extends ServiceProvider
     {
         Category::deleting(function ($category){
             $category->products()->delete();
+        });
+
+        Brand::deleting(function ($brand){
+            $brand->products()->delete();
         });
     }
 
