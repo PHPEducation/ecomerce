@@ -20,7 +20,7 @@
                 <div class="col-sm-9">
                     <div class="row">
                         <div class="col-sm-4">
-                            <img src="{{ asset(config('app.link') . $product->image ) }}" alt="" >
+                            <img src="{{ asset(config('app.link') .$product->image ) }}" alt="" >
                         </div>
                         <div class="col-sm-8">
                             <div class="single-item-body">
@@ -77,7 +77,7 @@
                                 <div class="single-item">
                                     <div class="single-item-header">
                                         <a href="{{ route('detailproduct', $productother->id ) }}">
-                                            <img src="{{ asset(config('app.link') . $productother->image) }}" alt="" class="img__fix"></a>
+                                            <img src="{{ asset(config('app.link') .$productother->image) }}" alt="" class="img__fix"></a>
                                     </div>
                                     <div class="single-item-body">
                                         <p class="single-item-title">{{ $productother->name }}</p>

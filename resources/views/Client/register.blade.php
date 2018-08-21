@@ -16,35 +16,45 @@
 </div>
 <div class="container">
     <div id="content">
-        <form action="#" method="post" class="beta-form-checkout">
+        {!! Form::open(['method' => 'POST','class' => 'beta-form-checkout']) !!}
             <div class="row">
                 <div class="col-sm-3"></div>
+                @if(count($errors)>0)
+                    <div class="alert alert-danger">
+                        @foreach($errors->all() as $err)
+                        {{$err}}
+                        @endforeach
+                    </div>
+                @endif
+                @if(Session::has('thanhcong'))
+                    <div class="alert alert-success">{{Session::get('thanhcong')}}</div>
+                @endif
                 <div class="col-sm-6">
                     <h4>{{ trans('home.register') }}</h4>
                     <div class="space20">&nbsp;</div>
                     <div class="form-block">
                         {!! Form::label('email', trans('home.email'), ['class' => 'col-md-4 control-label']) !!}
-                        {!! Form::text('email', '' , ['class' => 'form-control', 'id' => 'email']) !!}
+                        {!! Form::text('email', '' , ['class' => 'form-control', 'name' => 'email']) !!}
                     </div>
                     <div class="form-block">
                         {!! Form::label('fullname', trans('home.fullname'), ['class' => 'col-md-4 control-label']) !!}
-                        {!! Form::text('fullname', '' , ['class' => 'form-control', 'id' => 'fullname']) !!}
+                        {!! Form::text('fullname', '' , ['class' => 'form-control', 'name' => 'fullname']) !!}
                     </div>
                     <div class="form-block">
                         {!! Form::label('adress', trans('home.adress'), ['class' => 'col-md-4 control-label']) !!}
-                        {!! Form::text('adress', '' , ['class' => 'form-control', 'id' => 'adress']) !!}
+                        {!! Form::text('adress', '' , ['class' => 'form-control', 'name' => 'address']) !!}
                     </div>
                     <div class="form-block">
                         {!! Form::label('phone', trans('home.phone'), ['class' => 'col-md-4 control-label']) !!}
-                        {!! Form::text('phone', '' , ['class' => 'form-control', 'id' => 'phone']) !!}
+                        {!! Form::text('phone', '' , ['class' => 'form-control', 'name' => 'phone']) !!}
                     </div>
                     <div class="form-block">
                         {!! Form::label('password', trans('home.password'), ['class' => 'col-md-4 control-label']) !!}
-                        {!! Form::text('password', '' , ['class' => 'form-control', 'id' => 'password']) !!}
+                        {!! Form::password('password', ['class' => 'form-control', 'name' => 'password']) !!}
                     </div>
                     <div class="form-block">
                         {!! Form::label('repassword', trans('home.repassword'), ['class' => 'col-md-4 control-label']) !!}
-                        {!! Form::text('repassword', '' , ['class' => 'form-control', 'id' => 'repassword']) !!}
+                        {!! Form::password('repassword', ['class' => 'form-control', 'name' => 'repassword']) !!}
                     </div>
                     <div class="form-block">
                         <button type="submit" class="btn btn-primary">{{ trans('home.register')}}</button>
@@ -52,7 +62,7 @@
                 </div>
                 <div class="col-sm-3"></div>
             </div>
-        </form>
+        {!! Form::close() !!}
     </div>
 </div>
 @endsection

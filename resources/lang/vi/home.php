@@ -83,4 +83,7 @@ return [
     'Edit' => 'Edit',
     'soluong' => 'So luong',
     'sanphamlienquan' => 'San pham lien quan',
+    'success' => 'Đăng nhập thành công',
+    'fail' => 'Đăng nhập không thành công',
+    'notActive' => 'Tài khoản chưa kích hoạt',
 ];
