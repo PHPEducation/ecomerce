@@ -4,6 +4,7 @@ return [
     'take_order_dashboard' => '5',
     'paginate_category' => '10',
     'paginate_brand' => '10',
+    'paginate_product' => '10',
     /*
     |--------------------------------------------------------------------------
     | Application Name

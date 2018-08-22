@@ -39,4 +39,9 @@ class CategoryRepository implements CategoryRepositoryInterface
     {
         return Category::filterByParentId($id);
     }
+
+    public function where($column, $compare = null, $value)
+    {
+        return Category::where($column, $compare, $value);
+    }
 }

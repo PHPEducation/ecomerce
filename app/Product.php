@@ -32,4 +32,19 @@ class Product extends Model
     {
         return $this->morphMany('App\Image', 'imagetable');
     }
+
+    public function scopeResult($query)
+    {
+        return $query->where('id', '>', 0);
+    }
+
+    public function scopeSearch($query, $value)
+    {
+        return $query->where('name', 'like', "%$value%");
+    }
+
+    public function scopeOrderById($query, $value)
+    {
+        return $query->orderBy('id', $value);
+    }
 }

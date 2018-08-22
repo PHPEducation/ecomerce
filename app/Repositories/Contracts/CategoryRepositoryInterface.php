@@ -16,4 +16,5 @@ interface CategoryRepositoryInterface
     public function findOrFail($id, $column = ['*']);
     public function create($attributes = []);
     public function filterByParentId($id);
+    public function where($column, $compare = null, $value);
 }

@@ -49,4 +49,9 @@ class BrandRepository implements BrandRepositoryInterface
 
         return $brand->delete();
     }
+
+    public function pluck($name = null, $id = null)
+    {
+        return Brand::pluck($name, $id);
+    }
 }
