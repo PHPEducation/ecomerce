@@ -17,4 +17,5 @@ interface BrandRepositoryInterface
     public function findOrFail($id, $column = ['*']);
     public function update($attributes = [], $id);
     public function delete($id);
+    public function pluck($name = null, $id = null);
 }
