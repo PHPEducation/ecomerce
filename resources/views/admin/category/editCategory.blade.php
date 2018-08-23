@@ -2,7 +2,6 @@
 @section('content')
 <div id="wrapper">
     <!-- Navigation -->
-
     <!-- Page Content -->
     <div id="page-wrapper">
         <div class="container-fluid">
@@ -14,14 +13,23 @@
                 </div>
                 <!-- /.col-lg-12 -->
                 <div class="col-lg-7" style="padding-bottom:120px">
-                    {!! Form::open(['method' => 'POST']) !!}
+                    @if(session('message'))
+                        <div class="alert alert-success">
+                            {{ session('message') }}
+                        </div>
+                    @endif
+                    {!! Form::model($category, ['method' => 'POST', 'routes' => 'editCategory', 'id' => $category->id, 'files' => true]) !!}
                         <div class="form-group">
                             {!! Form::label('Name') !!}
-                            {!! Form::text('txtUser', null, ['class' => 'form-control', 'placeholder' => 'ex: news']) !!}
+                            {!! Form::text('Name', $category->name, ['class' => 'form-control', 'placeholder' => 'ex: news']) !!}
                         </div>
                         <div class="form-group">
-                            {!! Form::label('Slug') !!}
-                            {!! Form::text('txtPass', null, ['class' => 'form-control', 'placeholder' => 'Please Enter slug']) !!}
+                            {!! Form::label('Description') !!}
+                            {!! Form::text('Description', $category->description, ['class' => 'form-control', 'placeholder' => 'Please Enter description']) !!}
+                        </div>
+                        <div class="custom-file">
+                            {!! Form::label('Image') !!}
+                            {!! Form::file('image', ['class' => 'custom-file-input']) !!}
                         </div>
                         {!! Form::submit('Edit', ['class' => 'btn btn-default']) !!}
                         {!! Form::reset('Reset', ['class' => 'btn btn-default']) !!}

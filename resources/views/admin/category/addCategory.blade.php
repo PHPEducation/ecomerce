@@ -11,14 +11,25 @@
                     </h1>
                 </div>
                 <div class="col-lg-7" style="padding-bottom:120px">
+                    @if(session('message'))
+                        <div class="alert alert-success">
+                            {{ session('message') }}
+                        </div>
+                    @endif
                     {!! Form::open(['method' => 'POST']) !!}
                         <div class="form-group">
                             {!! Form::label('Name') !!}
-                            {!! Form::text('txtCategory', null, ['class' => 'form-control', 'placeholder' => 'ex: news']) !!}
+                            {!! Form::text('Name', null, ['class' => 'form-control', 'placeholder' => 'ex: news']) !!}
+                            {!! $errors->first('Name', '<p class="message">:message</p>') !!}
                         </div>
                         <div class="form-group">
-                            {!! Form::label('Slug') !!}
-                            {!! Form::text('txtPass', null, ['class' => 'form-control', 'placeholder' => 'Please Enter slug']) !!}
+                            {!! Form::label('Description') !!}
+                            {!! Form::text('Description', null, ['class' => 'form-control', 'placeholder' => 'ex: news']) !!}
+                            {!! $errors->first('Description', '<p class="message">:message</p>') !!}
+                        </div>
+                        <div class="custom-file">
+                            {!! Form::label('Image') !!}
+                            {!! Form::file('Image', ['class' => 'custom-file-input']) !!}
                         </div>
                         {!! Form::submit('Add', ['class' => 'btn btn-default']) !!}
                         {!! Form::reset('Reset', ['class' => 'btn btn-default']) !!}

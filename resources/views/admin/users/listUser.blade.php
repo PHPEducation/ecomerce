@@ -9,6 +9,7 @@
                     <h1 class="page-header">{{ trans('home_admin.User') }}
                         <small>{{ trans('home_admin.List') }}</small>
                     </h1>
+                    {!! Form::submit('Add', ['class' => 'btn btn-default btn_Add']) !!}
                 </div>
                 <!-- /.col-lg-12 -->
                 <table class="table table-striped table-bordered table-hover" id="dataTables-example">
@@ -16,37 +17,37 @@
                         <tr align="center">
                             <th>{{ trans('home_admin.ID') }}</th>
                             <th>{{ trans('home_admin.Username') }}</th>
-                            <th>{{ trans('home_admin.Level') }}</th>
-                            <th>{{ trans('home_admin.Status') }}</th>
+                            <th>{{ trans('home_admin.Email') }}</th>
+                            <th>{{ trans('home_admin.Phone') }}</th>
+                            <th>{{ trans('home_admin.Address') }}</th>
+                            <th>{{ trans('home_admin.Note') }}</th>
+                            <th>{{ trans('home_admin.Role') }}</th>
+                            <th>{{ trans('home_admin.Avatar') }}</th>
                             <th>{{ trans('home_admin.Delete') }}</th>
                             <th>{{ trans('home_admin.Edit') }}</th>
                         </tr>
                     </thead>
                     <tbody>
+                        @foreach($users as $user)
                         <tr class="odd gradeX" align="center">
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                            <td class="center"><i class="fa fa-trash-o  fa-fw"></i><a href="#">{{ trans('home_admin.Delete') }}</a></td>
-                            <td class="center"><i class="fa fa-pencil fa-fw"></i> <a href="#">{{ trans('home_admin.Edit') }}</a></td>
+                            <td>{{ $user->id }}</td>
+                            <td>{{ $user->name }}</td>
+                            <td>{{ $user->email }}</td>
+                            <td>{{ $user->phone }}</td>
+                            <td>{{ $user->address }}</td>
+                            <td>{{ $user->note }}</td>
+                            <td>{{ $user->role }}</td>
+                            <td><img class="img_ava" src="{{ asset("storage/img/users/$user->avatar" ) }}"></td>
+                                <!-- @if($user->role == 1)
+                                    {{ "Admin" }}
+                                @else
+                                {{ "Member" }}
+                                @endif
+                            <td>{{ $user->avatar }}</td> -->
+                            <td class="center"><i class="fa fa-trash-o  fa-fw"></i><a href="/admin/users/delete/{{ $user->id }}">{{ trans('home_admin.Delete') }}</a></td>
+                            <td class="center"><i class="fa fa-pencil fa-fw"></i> <a href="/admin/users/editUser/{{ $user->id }}">{{ trans('home_admin.Edit') }}</a></td>
                         </tr>
-                        <tr class="even gradeC" align="center">
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                            <td class="center"><i class="fa fa-trash-o  fa-fw"></i><a href="#">{{ trans('home_admin.Delete') }}</a></td>
-                            <td class="center"><i class="fa fa-pencil fa-fw"></i> <a href="#">{{ trans('home_admin.Edit') }}</a></td>
-                        </tr>
-                        <tr class="odd gradeX" align="center">
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                            <td class="center"><i class="fa fa-trash-o  fa-fw"></i><a href="#"></a>{{ trans('home_admin.Delete') }}</td>
-                            <td class="center"><i class="fa fa-pencil fa-fw"></i> <a href="#">{{ trans('home_admin.Edit') }}</a></td>
-                        </tr>
+                        @endforeach
                     </tbody>
                 </table>
             </div>

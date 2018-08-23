@@ -16,10 +16,12 @@
                         <tr align="center">
                             <th>{{ trans('home_admin.ID') }}</th>
                             <th>{{ trans('home_admin.Name') }}</th>
-                            <th>{{ trans('home_admin.Discount') }}</th>
-                            <th>{{ trans('home_admin.Price') }}</th>
-                            <th>{{ trans('home_admin.Status') }}</th>
+                            <th>{{ trans('home_admin.Category_id') }}</th>
                             <th>{{ trans('home_admin.Description') }}</th>
+                            <th>{{ trans('home_admin.Price') }}</th>
+                            <th>{{ trans('home_admin.Promotion_Price') }}</th>
+                            <th>{{ trans('home_admin.Image') }}</th>
+                            <th>{{ trans('home_admin.Unit') }}</th>
                             <th>{{ trans('home_admin.Delete') }}</th>
                             <th>{{ trans('home_admin.Edit') }}</th>
                         </tr>
@@ -29,30 +31,12 @@
                             <td></td>
                             <td></td>
                             <td></td>
-                            <td>$</td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
                             <td></td>
                             <td></td>
                             <td class="center"><i class="fa fa-trash-o  fa-fw"></i><a href="#"> {{ trans('home_admin.Delete') }}</a></td>
-                            <td class="center"><i class="fa fa-pencil fa-fw"></i> <a href="#">{{ trans('home_admin.Edit') }}</a></td>
-                        </tr>
-                        <tr class="even gradeC" align="center">
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                            <td>$</td>
-                            <td></td>
-                            <td></td>
-                            <td class="center"><i class="fa fa-trash-o  fa-fw"></i><a href="#">{{ trans('home_admin.Delete') }}</a></td>
-                            <td class="center"><i class="fa fa-pencil fa-fw"></i> <a href="#">{{ trans('home_admin.Edit') }}</a></td>
-                        </tr>
-                        <tr class="odd gradeX" align="center">
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                            <td>$</td>
-                            <td></td>
-                            <td></td>
-                            <td class="center"><i class="fa fa-trash-o  fa-fw"></i><a href="#">{{ trans('home_admin.Delete') }}</a></td>
                             <td class="center"><i class="fa fa-pencil fa-fw"></i> <a href="#">{{ trans('home_admin.Edit') }}</a></td>
                         </tr>
                     </tbody>
