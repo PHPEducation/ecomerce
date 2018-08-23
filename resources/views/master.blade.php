@@ -1,4 +1,3 @@
-
 <!doctype html>
 <html lang="en">
 <head>
@@ -21,7 +20,7 @@
     <div class="rev-slider">
          @yield('content')
     </div>
-     @include('footer')
+    @include('footer')
     <script src="{{ asset('assets/dest/js/jquery.js') }}"></script>
     <script src="{{ asset('assets/dest/vendors/jqueryui/jquery-ui-1.10.4.custom.min.js') }}"></script>
     <script src="http://netdna.bootstrapcdn.com/bootstrap/3.1.0/js/bootstrap.min.js"></script>

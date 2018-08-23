@@ -18,10 +18,11 @@
                             {{ session('message') }}
                         </div>
                     @endif
-                    {!! Form::open(['method' => 'POST']) !!}
+                    {!! Form::open(['method' => 'POST', 'enctype' => 'multipart/form-data']) !!}
                         <div class="form-group">
                             {!! Form::label('Name') !!}
                             {!! Form::text('Name', null, ['class' => 'form-control', 'placeholder' => 'Please Enter Product']) !!}
+                            {!! $errors->first('Name', '<p class="message">:message</p>') !!}
                         </div>
                         <div class="form-group">
                             {!! Form::label('Category_ID') !!}
@@ -34,10 +35,12 @@
                         <div class="form-group">
                             {!! Form::label('Price') !!}
                             {!! Form::text('Price', null, ['class' => 'form-control', 'placeholder' => 'Please Enter Price']) !!}
+                            {!! $errors->first('Price', '<p class="message">:message</p>') !!}
                         </div>
                         <div class="form-group">
                             {!! Form::label('Promotion_Price') !!}
                             {!! Form::text('Promotion_Price', null, ['class' => 'form-control', 'placeholder' => 'Please Enter Promotion_Price']) !!}
+                            {!! $errors->first('Promotion_Price', '<p class="message">:message</p>') !!}
                         </div>
                        <div class="custom-file">
                             {!! Form::label('Image') !!}
@@ -46,6 +49,7 @@
                         <div class="form-group">
                             {!! Form::label('Unit') !!}
                             {!! Form::text('Unit', null, ['class' => 'form-control', 'placeholder' => 'Please Enter Unit']) !!}
+                            {!! $errors->first('Unit', '<p class="message">:message</p>') !!}
                         </div>
                         {!! Form::submit('Add', ['class' => 'btn btn-default']) !!}
                         {!! Form::reset('Reset', ['class' => 'btn btn-default']) !!}

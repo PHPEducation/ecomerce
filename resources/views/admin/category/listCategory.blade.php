@@ -9,7 +9,7 @@
                     <h1 class="page-header">{{ trans('home_admin.Category') }}
                         <small>{{ trans('home_admin.List') }}</small>
                     </h1>
-                    {!! Form::submit('Add', ['class' => 'btn btn-default btn_Add', 'route' => 'route.addCategory']) !!}
+                    {!! Form::submit('Add', ['class' => 'btn btn-default btn_Add', 'routes' => 'addCategory']) !!}
                 </div>
                 <!-- /.col-lg-12 -->
                 <table class="table table-striped table-bordered table-hover" id="dataTables-example">
