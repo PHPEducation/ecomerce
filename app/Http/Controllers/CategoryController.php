@@ -28,7 +28,6 @@ class CategoryController extends Controller
         if ($req->hasFile('Image')) {
             $file = $req->file('Image');
             $format_img = $file->getClientOriginalExtension();
-            dd('lay dc anh');
             if($format_img != 'jpg' && $format_img != 'png' && $format_img != 'jpeg')
             {
                 return redirect('admin/category/addCategory')->with('error', 'Chon lai anh');
@@ -39,7 +38,6 @@ class CategoryController extends Controller
             $category->image = $nameImg;
         }
         else {
-            dd('deo');
             $category->image = "";
         }
 
@@ -59,8 +57,8 @@ class CategoryController extends Controller
         $category->name = $req->Name;
         $category->description = $req->Description;
 
-        if ($req->hasFile('Image')) {
-            $file = $req->file('Image');
+        if ($req->hasFile('image')) {
+            $file = $req->file('image');
             $format_img = $file->getClientOriginalExtension();
             if($format_img != 'jpg' && $format_img != 'png' && $format_img != 'jpeg')
             {

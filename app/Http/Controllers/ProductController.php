@@ -78,7 +78,7 @@ class ProductController extends Controller
             $product->image = "";
         }
         $product->save();
-        return redirect('admin/product/addProduct')->with('message', 'success');
+        return redirect('admin/product/editProduct/' . $id)->with('message', 'success');
     }
 
     public function getdeleteProduct($id)

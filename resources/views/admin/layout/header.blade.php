@@ -2,7 +2,7 @@
 <nav class="navbar navbar-default navbar-static-top" role="navigation" style="margin-bottom: 0">
     <div class="navbar-header">
         <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
-            <span class="sr-only">{{ trans('home_admin.Toggle navigation') }}</span>
+            <span class="sr-only">{{ trans('home_admin.Toggle') }}'</span>
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
@@ -10,6 +10,7 @@
         <a class="navbar-brand" href="index.html">{{ trans('home_admin.Admin') }}</a>
     </div>
     <!-- /.navbar-header -->
+
     <ul class="nav navbar-top-links navbar-right">
         <!-- /.dropdown -->
         <li class="dropdown">

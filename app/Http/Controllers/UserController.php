@@ -73,7 +73,7 @@ class UserController extends Controller
             $format_ava = $file->getClientOriginalExtension();
             if($format_ava != 'jpg' && $format_ava != 'png' && $format_ava != 'jpeg')
             {
-                return redirect('admin/users/addUser')->with('error', 'Chon lai anh');
+                return redirect('admin/users/editUser')->with('error', 'Chon lai anh');
             }
             $name = $file->getClientOriginalName();
             $nameAva = str_random(4) . "_". $name;
@@ -83,10 +83,8 @@ class UserController extends Controller
         else {
             $user->avatar = "";
         }
-
         $user->save();
-
-        return redirect('admin/users/editUser/' . $id)->with('message', 'success');
+        return redirect('admin/users/editUser' . $id)->with('message', 'success');
     }
     public function getdeleteUser($id)
     {
