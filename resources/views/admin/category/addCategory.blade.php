@@ -16,7 +16,7 @@
                             {{ session('message') }}
                         </div>
                     @endif
-                    {!! Form::open(['method' => 'POST']) !!}
+                    {!! Form::open(['method' => 'POST', 'enctype' => 'multipart/form-data']) !!}
                         <div class="form-group">
                             {!! Form::label('Name') !!}
                             {!! Form::text('Name', null, ['class' => 'form-control', 'placeholder' => 'ex: news']) !!}
