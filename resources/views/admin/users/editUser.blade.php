@@ -18,7 +18,7 @@
                             {{ session('message') }}
                         </div>
                     @endif
-                    {!! Form::model($user, ['method' => 'POST', 'routes' => 'editUser', 'id' => $user->id, 'files' => true]) !!}
+                    {!! Form::model($user, ['method' => 'POST', 'routes' => 'editUser', 'id' => $user->id, 'files' => true, 'enctype' => 'multipart/form-data']) !!}
                         <div class="form-group">
                             {!! Form::label('Username') !!}
                             {!! Form::text('Username', $user->name, ['class' => 'form-control', 'placeholder' => 'Please Enter Username']) !!}
@@ -77,5 +77,3 @@
     <!-- /#page-wrapper -->
 </div>
 @endsection
-
-
