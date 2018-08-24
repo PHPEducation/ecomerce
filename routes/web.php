@@ -11,24 +11,43 @@
 |
 */
 
-Route::get('/', function () {
+Route::get('/admin', function () {
     return view('master_admin');
 });
 Route::group(['prefix'=>'admin'], function() {
     Route::group(['prefix'=>'users'], function() {
         Route::get('/listUser', 'UserController@getlistUser')->name('listUser');
-        Route::get('/addUser', 'UserController@getaddUser')->name('addUser');
-        Route::get('/editUser', 'UserController@geteditUser')->name('editUser');
+
+        Route::get('addUser', 'UserController@getaddUser')->name('addUser');
+        Route::post('addUser', 'UserController@postaddUser');
+
+        Route::get('editUser/{id}', 'UserController@geteditUser')->name('editUser');
+        Route::post('editUser/{id}', 'UserController@posteditUser');
+
+        Route::get('/delete/{id}', 'UserController@getdeleteUser');
     });
     Route::group(['prefix'=>'product'], function() {
-        Route::get('/listUser', 'ProductController@getlistProduct')->name('listProduct');
-        Route::get('/addUser', 'ProductController@getaddProduct')->name('addProduct');
-        Route::get('/editUser', 'ProductController@geteditProduct')->name('editProduct');
+        Route::get('/listProduct', 'ProductController@getlistProduct')->name('listProduct');
+
+        Route::get('addProduct', 'ProductController@getaddProduct')->name('addProduct');
+        Route::post('addProduct', 'ProductController@postaddProduct');
+
+        Route::get('editProduct/{id}', 'ProductController@geteditProduct')->name('editProduct');
+        Route::post('editProduct/{id}', 'ProductController@posteditProduct');
+
+        Route::get('/delete/{id}', 'ProductController@getdeleteProduct');
+
     });
     Route::group(['prefix'=>'category'], function() {
-        Route::get('/listUser', 'CategoryController@getlistCategory')->name('listCategory');
-        Route::get('/addUser', 'CategoryController@getaddCategory')->name('addCategory');
-        Route::get('/editUser', 'CategoryController@geteditCategory')->name('editCategory');
+        Route::get('/listCategory', 'CategoryController@getlistCategory')->name('listCategory');
+
+        Route::get('addCategory', 'CategoryController@getaddCategory')->name('addCategory');
+        Route::post('addCategory', 'CategoryController@postaddCategory');
+
+        Route::get('editCategory/{id}', 'CategoryController@geteditCategory')->name('editCategory');
+        Route::post('editCategory/{id}', 'CategoryController@posteditCategory');
+
+        Route::get('/delete/{id}', 'CategoryController@getdeleteCategory');
     });
 });
 
