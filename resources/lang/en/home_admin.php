@@ -41,4 +41,5 @@
         'Category_id' => 'Category_id',
         'Promotion_Price' => 'Promotion_Price',
         'Unit' => 'Unit',
+        'success' => 'success',
     ];

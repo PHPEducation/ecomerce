@@ -18,34 +18,38 @@
                             {{ session('message') }}
                         </div>
                     @endif
-                    {!! Form::open(['method' => 'POST']) !!}
+                    {!! Form::open(['method' => 'POST', 'enctype' => 'multipart/form-data']) !!}
                         <div class="form-group">
-                            {!! Form::label('Name') !!}
-                            {!! Form::text('Name', null, ['class' => 'form-control', 'placeholder' => 'Please Enter Product']) !!}
+                            {!! Form::label(trans('home_admin.Name')) !!}
+                            {!! Form::text('Name', null, ['class' => 'form-control']) !!}
+                            {!! $errors->first('Name', '<p class="message">:message</p>') !!}
                         </div>
                         <div class="form-group">
-                            {!! Form::label('Category_ID') !!}
-                            {!! Form::text('Category_ID', null, ['class' => 'form-control', 'placeholder' => 'Please Enter Name']) !!}
+                            {!! Form::label(trans('home_admin.Category_id')) !!}
+                            {!! Form::text('Category_ID', null, ['class' => 'form-control']) !!}
                         </div>
                         <div class="form-group">
-                            {!! Form::label('Description') !!}
-                            {!! Form::text('Description', null, ['class' => 'form-control', 'placeholder' => 'Please Enter Description']) !!}
+                            {!! Form::label(trans('home_admin.Description')) !!}
+                            {!! Form::text('Description', null, ['class' => 'form-control']) !!}
                         </div>
                         <div class="form-group">
-                            {!! Form::label('Price') !!}
-                            {!! Form::text('Price', null, ['class' => 'form-control', 'placeholder' => 'Please Enter Price']) !!}
+                            {!! Form::label(trans('home_admin.Price')) !!}
+                            {!! Form::text('Price', null, ['class' => 'form-control']) !!}
+                            {!! $errors->first('Price', '<p class="message">:message</p>') !!}
                         </div>
                         <div class="form-group">
-                            {!! Form::label('Promotion_Price') !!}
-                            {!! Form::text('Promotion_Price', null, ['class' => 'form-control', 'placeholder' => 'Please Enter Promotion_Price']) !!}
+                            {!! Form::label(trans('home_admin.Promotion_Price')) !!}
+                            {!! Form::text('Promotion_Price', null, ['class' => 'form-control']) !!}
+                            {!! $errors->first('Promotion_Price', '<p class="message">:message</p>') !!}
                         </div>
                        <div class="custom-file">
-                            {!! Form::label('Image') !!}
+                            {!! Form::label(trans('home_admin.Image')) !!}
                             {!! Form::file('image', ['class' => 'custom-file-input']) !!}
                         </div>
                         <div class="form-group">
-                            {!! Form::label('Unit') !!}
-                            {!! Form::text('Unit', null, ['class' => 'form-control', 'placeholder' => 'Please Enter Unit']) !!}
+                            {!! Form::label(trans('home_admin.Unit')) !!}
+                            {!! Form::text('Unit', null, ['class' => 'form-control']) !!}
+                            {!! $errors->first('Unit', '<p class="message">:message</p>') !!}
                         </div>
                         {!! Form::submit('Add', ['class' => 'btn btn-default']) !!}
                         {!! Form::reset('Reset', ['class' => 'btn btn-default']) !!}

@@ -27,18 +27,20 @@
                         </tr>
                     </thead>
                     <tbody>
+                        @foreach($products as $product)
                         <tr class="odd gradeX" align="center">
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                            <td class="center"><i class="fa fa-trash-o  fa-fw"></i><a href="#"> {{ trans('home_admin.Delete') }}</a></td>
-                            <td class="center"><i class="fa fa-pencil fa-fw"></i> <a href="#">{{ trans('home_admin.Edit') }}</a></td>
+                            <td>{{ $product->id }}</td>
+                            <td>{{ $product->name }}</td>
+                            <td>{{ $product->category_id }}</td>
+                            <td>{{ $product->description }}</td>
+                            <td>{{ $product->price }}</td>
+                            <td>{{ $product->promotion_price }}</td>
+                            <td><img class="img_ava" src="{{ asset("storage/img/products/$product->image" ) }}"></td>
+                            <td>{{ $product->unit }}</td>
+                            <td class="center"><i class="fa fa-trash-o  fa-fw"></i><a href="/admin/product/delete/{{ $product->id }}"> {{ trans('home_admin.Delete') }}</a></td>
+                            <td class="center"><i class="fa fa-pencil fa-fw"></i> <a href="/admin/product/editProduct/{{ $product->id }}">{{ trans('home_admin.Edit') }}</a></td>
                         </tr>
+                        @endforeach
                     </tbody>
                 </table>
             </div>

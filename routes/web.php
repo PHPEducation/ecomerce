@@ -16,38 +16,38 @@ Route::get('/admin', function () {
 });
 Route::group(['prefix'=>'admin'], function() {
     Route::group(['prefix'=>'users'], function() {
-        Route::get('/listUser', 'UserController@getlistUser')->name('listUser');
+        Route::get('/listUser', 'UserController@getListUser')->name('listUser');
 
-        Route::get('addUser', 'UserController@getaddUser')->name('addUser');
+        Route::get('addUser', 'UserController@getAddUser')->name('addUser');
         Route::post('addUser', 'UserController@postaddUser');
 
-        Route::get('editUser/{id}', 'UserController@geteditUser')->name('editUser');
-        Route::post('editUser/{id}', 'UserController@posteditUser');
+        Route::get('editUser/{id}', 'UserController@getEditUser')->name('editUser');
+        Route::post('editUser/{id}', 'UserController@postEditUser');
 
-        Route::get('/delete/{id}', 'UserController@getdeleteUser');
+        Route::get('/delete/{id}', 'UserController@getDeleteUser');
     });
     Route::group(['prefix'=>'product'], function() {
-        Route::get('/listProduct', 'ProductController@getlistProduct')->name('listProduct');
+        Route::get('/listProduct', 'ProductController@getListProduct')->name('listProduct');
 
-        Route::get('addProduct', 'ProductController@getaddProduct')->name('addProduct');
-        Route::post('addProduct', 'ProductController@postaddProduct');
+        Route::get('addProduct', 'ProductController@getAddProduct')->name('addProduct');
+        Route::post('addProduct', 'ProductController@postAddProduct');
 
-        Route::get('editProduct/{id}', 'ProductController@geteditProduct')->name('editProduct');
-        Route::post('editProduct/{id}', 'ProductController@posteditProduct');
+        Route::get('editProduct/{id}', 'ProductController@getEditProduct')->name('editProduct');
+        Route::post('editProduct/{id}', 'ProductController@postEditProduct');
 
-        Route::get('/delete/{id}', 'ProductController@getdeleteProduct');
+        Route::get('/delete/{id}', 'ProductController@getDeleteProduct');
 
     });
     Route::group(['prefix'=>'category'], function() {
-        Route::get('/listCategory', 'CategoryController@getlistCategory')->name('listCategory');
+        Route::get('/listCategory', 'CategoryController@getListCategory')->name('listCategory');
 
-        Route::get('addCategory', 'CategoryController@getaddCategory')->name('addCategory');
+        Route::get('addCategory', 'CategoryController@getAddCategory')->name('addCategory');
         Route::post('addCategory', 'CategoryController@postaddCategory');
 
-        Route::get('editCategory/{id}', 'CategoryController@geteditCategory')->name('editCategory');
-        Route::post('editCategory/{id}', 'CategoryController@posteditCategory');
+        Route::get('editCategory/{id}', 'CategoryController@getEditCategory')->name('editCategory');
+        Route::post('editCategory/{id}', 'CategoryController@postEditCategory');
 
-        Route::get('/delete/{id}', 'CategoryController@getdeleteCategory');
+        Route::get('/delete/{id}', 'CategoryController@getDeleteCategory');
     });
 });
 

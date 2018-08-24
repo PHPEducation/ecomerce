@@ -46,7 +46,7 @@ class UserController extends Controller
         }
         $user->save();
 
-        return redirect('admin/users/addUser')->with('message', 'success');
+        return redirect('admin/users/addUser')->with('message', trans('home_admin.success'));
     }
 
     public function getEditUser($id)
@@ -81,13 +81,13 @@ class UserController extends Controller
         $user->role = $req->role;
         $user->save();
 
-        return redirect('admin/users/editUser' . $id)->with('message', 'success');
+        return redirect('admin/users/editUser' . $id)->with('message', trans('home_admin.success'));
     }
     public function getDeleteUser($id)
     {
         $user = User::find($id);
         $user->delete();
 
-        return redirect('admin/users/listUser')->with('message', 'delete success');
+        return redirect('admin/users/listUser')->with('message', trans('home_admin.success'));
     }
 }

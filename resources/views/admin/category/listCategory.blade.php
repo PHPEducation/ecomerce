@@ -9,8 +9,7 @@
                     <h1 class="page-header">{{ trans('home_admin.Category') }}
                         <small>{{ trans('home_admin.List') }}</small>
                     </h1>
-                    {!! Form::submit('Add', ['class' => 'btn btn-default btn_Add', 'route' => 'route.addCategory']) !!}
-                </div>
+                    {!! Form::submit('Add', ['class' => 'btn btn-default btn_Add', 'routes' => 'addCategory']) !!}
                 <!-- /.col-lg-12 -->
                 <table class="table table-striped table-bordered table-hover" id="dataTables-example">
                     <thead>
@@ -29,7 +28,7 @@
                             <td>{{ $category->id }}</td>
                             <td>{{ $category->name }}</td>
                             <td>{{ $category->description }}</td>
-                            <td><img class="img_image" src="{{ asset("storage/img/categories/$category->image" ) }}"></td>
+                            <td><img class="img_image img-reponsive" src="{{ asset("storage/img/categories/$category->image" ) }}"></td>
                             <td class="center">
                                 <i class="fa fa-trash-o  fa-fw"></i><a href="/admin/category/delete/{{ $category->id }}"> {{ trans('home_admin.Delete') }}</a>
                             </td>
