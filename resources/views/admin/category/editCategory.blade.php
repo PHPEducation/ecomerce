@@ -18,7 +18,7 @@
                             {{ session('message') }}
                         </div>
                     @endif
-                    {!! Form::model($category, ['method' => 'POST', 'routes' => 'editCategory', 'id' => $category->id, 'files' => true]) !!}
+                    {!! Form::model($category, ['method' => 'POST', 'routes' => 'editCategory', 'id' => $category->id, 'files' => true, 'enctype' => 'multipart/form-data']) !!}
                         <div class="form-group">
                             {!! Form::label('Name') !!}
                             {!! Form::text('Name', $category->name, ['class' => 'form-control', 'placeholder' => 'ex: news']) !!}
