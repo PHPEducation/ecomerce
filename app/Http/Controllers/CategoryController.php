@@ -7,6 +7,7 @@ use Illuminate\Validation\Validator;
 use Illuminate\Http\Request;
 use App\Category;
 use App\Http\Requests\CategoryRequest;
+use Excel;
 
 class CategoryController extends Controller
 {
@@ -38,7 +39,6 @@ class CategoryController extends Controller
         else {
             $category->image = "";
         }
-
         $category->save();
 
         return redirect('admin/category/addCategory')->with('message', trans('home_admin.success'));
@@ -83,5 +83,27 @@ class CategoryController extends Controller
         $category->delete();
 
         return redirect('admin/category/listCategory')->with('message', trans('home_admin.success'));
+    }
+
+    public function importCategory(Request $req)
+    {
+        if ($req->hasFile('categories')) {
+            $path = $req->file('categories')->getRealPath();
+            $data = \Excel::load($path)->get();
+
+            if ($data->count()) {
+                foreach ($data as $key => $value) {
+                    $category_list[] = ['name' => $value->name, 'description' => $value->description, 'image' => $value->image];
+                }
+                if (!empty($category_list)) {
+                    Category::insert($category_list);
+                    \Session::flash('success', trans('home_admin.file import success'));
+                }
+            }
+            else {
+                    \Session::flash('warning', trans('home_admin.There is no file to import'));
+            }
+            return back()->with('message', trans('home_admin.success'));
+        }
     }
 }
