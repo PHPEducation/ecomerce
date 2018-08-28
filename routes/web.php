@@ -41,13 +41,15 @@ Route::group(['prefix'=>'admin'], function() {
     Route::group(['prefix'=>'category'], function() {
         Route::get('/listCategory', 'CategoryController@getListCategory')->name('listCategory');
 
-        Route::get('addCategory', 'CategoryController@getAddCategory')->name('addCategory');
-        Route::post('addCategory', 'CategoryController@postaddCategory');
+        Route::get('/addCategory', 'CategoryController@getAddCategory')->name('addCategory');
+        Route::post('/addCategory', 'CategoryController@postAddCategory');
 
         Route::get('editCategory/{id}', 'CategoryController@getEditCategory')->name('editCategory');
         Route::post('editCategory/{id}', 'CategoryController@postEditCategory');
 
         Route::get('/delete/{id}', 'CategoryController@getDeleteCategory');
+
+        Route::post('category-import', 'CategoryController@importCategory')->name('importCategory');
     });
 });
 
@@ -61,3 +63,4 @@ Route::get('/about', 'PageController@about')->name('taikhoan');
 Route::get('/checkout','PageController@checkout')->name('dathang');
 Route::get('/addToCart', 'PageController@addToCart')->name('addToCart');
 
+Auth::routes();

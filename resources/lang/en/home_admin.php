@@ -42,4 +42,6 @@
         'Promotion_Price' => 'Promotion_Price',
         'Unit' => 'Unit',
         'success' => 'success',
+        'file import success' => 'file import success',
+        'There is no file to import' => 'There is no file to import',
     ];
