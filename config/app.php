@@ -1,12 +1,13 @@
 <?php
 
 return [
+
     'link' => 'storage/img/users/',
     'img_name_length' => '4',
     'paginate' => '6',
     'pagination' => '8',
-    'paginates' =>'4',
     'link' => 'image/product/',
+    'paginates' =>'4',
     'comparefix' => '0',
 
     /*--------------------------------------------------------------------------

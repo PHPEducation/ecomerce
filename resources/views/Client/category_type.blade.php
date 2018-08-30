@@ -23,7 +23,7 @@
                         <ul class="aside-menu">
                             @foreach($categoryTypes as $categoryType)
                             <li>
-                                <a href="{{ route('categorytype', $categoryType->id ) }}">
+                                <a href="{{ route('categorytype' , $categoryType->id ) }}">
                                     {{ $categoryType->name }}
                                 </a>
                             </li>

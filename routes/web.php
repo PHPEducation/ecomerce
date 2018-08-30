@@ -11,6 +11,7 @@
 |
 */
 
+
 Route::get('/admin', function () {
     return view('master_admin');
 });
@@ -54,13 +55,23 @@ Route::group(['prefix'=>'admin'], function() {
 });
 
 Route::get('/index', 'PageController@getIndex')->name('trangchu');
-Route::get('/categorytype', 'PageController@categorytype')->name('loaisanpham');
-Route::get('/detailproduct', 'PageController@detailproduct')->name('chitietsanpham');
+Route::get('/categorytype/{type}', 'PageController@categorytype')->name('categorytype');
+Route::get('/detailproduct/{id}', 'PageController@detailproduct')->name('detailproduct');
 Route::get('/contact', 'PageController@contact')->name('lienhe');
 Route::get('/login', 'PageController@login')->name('dangnhap');
+Route::post('/login', 'PageController@postLogin')->name('login');
 Route::get('/register', 'PageController@register')->name('dangky');
+Route::post('/register', 'PageController@postRegister');
 Route::get('/about', 'PageController@about')->name('taikhoan');
 Route::get('/checkout','PageController@checkout')->name('dathang');
-Route::get('/addToCart', 'PageController@addToCart')->name('addToCart');
+Route::post('/checkout', 'PageController@postCheckOut')->name('order');
+Route::get('/viewCart', 'PageController@viewCart')->name('viewCart');
+Route::get('/addToCart/{id}', 'PageController@addToCart')->name('addToCart');
+Route::get('/delItemCart/{id}', 'PageController@delItemCart')->name('delItemCart');
+Route::get('/searchproduct', 'PageController@searchProduct')->name('searchProduct');
+Route::get('/logout', 'PageController@postLogout')->name('Logout');
+Route::post('/comments/{id}', 'PageController@comments');
+Route::get('/auth/facebook', 'SocialAuthController@redirectToProvider');
+Route::get('/auth/facebook/callback', 'SocialAuthController@handleProviderCallback');
 
 Auth::routes();
