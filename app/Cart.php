@@ -23,12 +23,6 @@ class Cart
 				$giohang = $this->items[$id];
 			}
 		}
-		$giohang['qty']++;
-		$giohang['price'] = $item->unit_price * $giohang['qty'];
-		$this->items[$id] = $giohang;
-		$this->totalQty++;
-		$this->totalPrice += $item->unit_price;
-	}
 		$giohang['qty'] += isset($req->$giohang['qty']) ? $req->$giohang['qty'] : 1;
 		$giohang['price'] = $item->price * $giohang['qty'];
 		$this->items[$id] = $giohang;
@@ -51,5 +45,4 @@ class Cart
 		$this->totalPrice -= $this->items[$id]['price'];
 		unset($this->items[$id]);
 	}
-
 }

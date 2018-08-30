@@ -59,8 +59,8 @@ Route::get('/categorytype/{type}', 'PageController@categorytype')->name('categor
 Route::get('/detailproduct/{id}', 'PageController@detailproduct')->name('detailproduct');
 Route::get('/contact', 'PageController@contact')->name('lienhe');
 Route::get('/login', 'PageController@login')->name('dangnhap');
-Route::post('/login', 'PageController@postLogin')->name('login');
 Route::get('/register', 'PageController@register')->name('dangky');
+Route::post('/login', 'PageController@postLogin')->name('login');
 Route::post('/register', 'PageController@postRegister');
 Route::get('/about', 'PageController@about')->name('taikhoan');
 Route::get('/checkout','PageController@checkout')->name('dathang');
@@ -74,4 +74,4 @@ Route::post('/comments/{id}', 'PageController@comments');
 Route::get('/auth/facebook', 'SocialAuthController@redirectToProvider');
 Route::get('/auth/facebook/callback', 'SocialAuthController@handleProviderCallback');
 
-Auth::routes();
+

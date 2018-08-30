@@ -7,7 +7,7 @@ return [
     'account' => 'Tài khoản',
     'login' => 'Đăng nhập',
     'register' => 'Đăng kí',
-    'cart' => 'Giỏ hàng (Trống)',
+    'cart' => 'Giỏ hàng',
     'nameproduct' => 'ten san pham',
     'size' => 'size',
     'total' =>'Tổng tiền',
@@ -86,4 +86,5 @@ return [
     'success' => 'Đăng nhập thành công',
     'fail' => 'Đăng nhập không thành công',
     'notActive' => 'Tài khoản chưa kích hoạt',
+    'send' => 'gui',
 ];
