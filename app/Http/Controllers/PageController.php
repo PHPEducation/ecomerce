@@ -19,16 +19,14 @@ use Auth;
 
 class PageController extends Controller
 {
-
-    public function __construct()
+   public function __construct()
     {
         if(Auth::check())
         {
             view()->share('user', Auth::user());
         }
     }
-
-    public function getIndex()
+    Public function getIndex()
     {
         $slide = Slide::all();
         $newProducts = Product::where('status', 1)->paginate(config('app.paginates'));
@@ -72,8 +70,8 @@ class PageController extends Controller
             $q->paginate(3)->last();
         }])
         ->first();
-        $productothers = Product::where('category_id' ,'<>', $product->id)
-                        ->paginate(3);
+<
+        $productothers = Product::where('category_id' ,'<>', $product->id)->paginate(3);
 
         return view('Client.detailproduct', compact('product', 'productothers'));
     }
@@ -83,6 +81,9 @@ class PageController extends Controller
          $comments = Comment::where('product_id', $id)
                             ->orderBy('id', 'DESC')
                             ->first();;
+         $comments = Comment::where('product_id', $id)
+                    ->orderBy('id', 'DESC')
+                    ->first();
 
         if ($request->ajax())
         {
@@ -135,6 +136,7 @@ class PageController extends Controller
             else
             {
                 return redirect()->back()->with(['flag'=>'danger','message'=>'{{'trans('home.fail)}}']);
+
             }
         }
         else
@@ -151,6 +153,7 @@ class PageController extends Controller
 
     public function checkout()
     {
+
         return view('Client.checkout');
     }
 
@@ -165,7 +168,7 @@ class PageController extends Controller
         $cart = new Cart($oldCart);
         $cart->add($product, $req->id);
         $req->Session()->put('cart', $cart);
-
+<
         return redirect()->back();
     }
 
@@ -175,7 +178,7 @@ class PageController extends Controller
         $cart = new Cart($oldCart);
         $cart->removeItem($id);
         Session::put('cart', $cart);
-
+<
         return redirect()->back();
     }
 
@@ -213,6 +216,55 @@ class PageController extends Controller
         $bill->save();
         foreach ($cart->items as $key => $value)
         {
+            $bill_detail = new BillDetail;
+            $bill_detail->bill_id = $bill->id;
+            $bill_detail->product_id = $key;
+            $bill_detail->quanity = $value['qty'];
+            $bill_detail->unit_price = ($value['price']/$value['qty']);
+            $bill_detail->save();
+        }
+
+        return redirect()->back()->with('thongbao', 'dat hang thanh cong');
+    }
+
+    public function comments($id, Request $req)
+    {
+    {
+        $searchProducts = Product::where('name', 'like', "%".$req->key."%" )
+                            ->orWhere('price', $req->key )
+                            ->get();
+
+        return view('Client.searchProduct', compact('searchProducts'));
+    }
+
+    public function postLogout(){
+        Auth::logout();
+
+        return redirect()->route('trangchu');
+    }
+
+    public function postCheckOut(Request $req)
+    {
+        $cart = Session::get('cart');
+
+        $user = new User;
+        $user->name = $req->name;
+        $user->email = $req->email;
+        $user->address = $req->address;
+        $user->phone = $req->phone;
+        $user->note = $req->note;
+        $user->save();
+
+        $bill = new Bill;
+        $bill->user_id =  $user->id;
+        $bill->date = date('Y-m-d');
+        $bill->total = $cart->totalPrice;
+        $bill->payment = $req->payment_method;
+        $bill->note = $req->note;
+        $bill->save();
+
+        foreach ($cart->items as $key => $value) {
+
             $bill_detail = new BillDetail;
             $bill_detail->bill_id = $bill->id;
             $bill_detail->product_id = $key;
