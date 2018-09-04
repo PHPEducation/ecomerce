@@ -25,14 +25,14 @@
                             {!! $errors->first('Username', '<p class="message">:message</p>') !!}
                         </div>
                         <div class="form-group">
-                            {!! Form::checkbox('changePassword', null, false, ['id' => 'changePassword']) !!}
+                            {!! Form::checkbox('changePassword1', null, true, ['id' => 'changePassword']) !!}
                             {!! Form::label('Password') !!}
-                            {!! Form::text('Password', null, ['class' => 'form-control password', 'placeholder' => 'Please Enter Password']) !!}
+                            {!! Form::text('Password', null, ['class' => 'form-control password', 'placeholder' => 'Please Enter Password', 'disabled' => '']) !!}
                             {!! $errors->first('Password', '<p class="message">:message</p>') !!}
                         </div>
                         <div class="form-group">
                             {!! Form::label('RePassword') !!}
-                            {!! Form::text('RePassword', null, ['class' => 'form-control password', 'placeholder' => 'Please Enter RePassword']) !!}
+                            {!! Form::text('RePassword', null, ['class' => 'form-control password', 'placeholder' => 'Please Enter RePassword', 'disabled' => '']) !!}
                             {!! $errors->first('Password', '<p class="message">:message</p>') !!}
                         </div>
                         <div class="form-group">
@@ -47,7 +47,7 @@
                         </div>
                         <div class="form-group">
                             {!! Form::label('Email') !!}
-                            {!! Form::text('Email', $user->email, ['class' => 'form-control', 'placeholder' => 'Please Enter Email', 'type' => 'email', 'readonly' => 'true']) !!}
+                            {!! Form::text('Email', $user->email, ['class' => 'form-control', 'placeholder' => 'Please Enter Email', 'type' => 'email', 'disabled' => 'disabled']) !!}
                         </div>
                         <div class="form-group">
                             {!! Form::label('Note') !!}

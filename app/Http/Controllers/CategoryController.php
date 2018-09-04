@@ -13,7 +13,7 @@ class CategoryController extends Controller
 {
     public function getListCategory()
     {
-        $categories = Category::all();
+        $categories = Category::paginate(config('app.paginates'));
 
         return view('admin.category.listCategory', compact('categories'));
     }

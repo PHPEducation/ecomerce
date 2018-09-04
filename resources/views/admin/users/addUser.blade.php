@@ -19,32 +19,32 @@
                     @endif
                     {!! Form::open(['method' => 'POST', 'enctype' => 'multipart/form-data']) !!}
                         <div class="form-group">
-                            {!! Form::label('Username') !!}
+                            {!! Form::label(trans('home_admin.Username *')) !!}
                             {!! Form::text('Username', null, ['class' => 'form-control', 'placeholder' => 'Please Enter Username']) !!}
                             {!! $errors->first('Username', '<p class="message">:message</p>') !!}
                         </div>
                         <div class="form-group">
-                            {!! Form::label('Password') !!}
+                            {!! Form::label(trans('home_admin.Password *')) !!}
                             {!! Form::password('Password', ['class' => 'form-control', 'placeholder' => 'Please Enter Password']) !!}
                             {!! $errors->first('Password', '<p class="message">:message</p>') !!}
                         </div>
                         <div class="form-group">
-                            {!! Form::label('RePassword') !!}
+                            {!! Form::label(trans('home_admin.RePassword *')) !!}
                             {!! Form::password('RePassword', ['class' => 'form-control', 'placeholder' => 'Please Enter RePassword']) !!}
                             {!! $errors->first('Password', '<p class="message">:message</p>') !!}
                         </div>
                         <div class="form-group">
-                            {!! Form::label('Phone') !!}
+                            {!! Form::label(trans('home_admin.Phone *')) !!}
                             {!! Form::text('Phone', null, ['class' => 'form-control', 'placeholder' => 'Please Enter Phone']) !!}
                             {!! $errors->first('Phone', '<p class="message">:message</p>') !!}
                         </div>
                         <div class="form-group">
-                            {!! Form::label('Address') !!}
+                            {!! Form::label(trans('home_admin.Address *')) !!}
                             {!! Form::text('Address', null, ['class' => 'form-control', 'placeholder' => 'Please Enter Address']) !!}
                             {!! $errors->first('Address', '<p class="message">:message</p>') !!}
                         </div>
                         <div class="form-group">
-                            {!! Form::label('Email') !!}
+                            {!! Form::label(trans('home_admin.Email *')) !!}
                             {!! Form::text('Email', null, ['class' => 'form-control', 'placeholder' => 'Please Enter Email', 'type' => 'email']) !!}
                             {!! $errors->first('Email', '<p class="message">:message</p>') !!}
                         </div>

@@ -20,25 +20,25 @@
                     @endif
                     {!! Form::open(['method' => 'POST', 'enctype' => 'multipart/form-data']) !!}
                         <div class="form-group">
-                            {!! Form::label(trans('home_admin.Name')) !!}
+                            {!! Form::label(trans('home_admin.Name *')) !!}
                             {!! Form::text('Name', null, ['class' => 'form-control']) !!}
                             {!! $errors->first('Name', '<p class="message">:message</p>') !!}
                         </div>
                         <div class="form-group">
-                            {!! Form::label(trans('home_admin.Category_id')) !!}
+                            {!! Form::label(trans('home_admin.Category_id *')) !!}
                             {!! Form::text('Category_ID', null, ['class' => 'form-control']) !!}
                         </div>
                         <div class="form-group">
-                            {!! Form::label(trans('home_admin.Description')) !!}
+                            {!! Form::label(trans('home_admin.Description *')) !!}
                             {!! Form::text('Description', null, ['class' => 'form-control']) !!}
                         </div>
                         <div class="form-group">
-                            {!! Form::label(trans('home_admin.Price')) !!}
+                            {!! Form::label(trans('home_admin.Price *')) !!}
                             {!! Form::text('Price', null, ['class' => 'form-control']) !!}
                             {!! $errors->first('Price', '<p class="message">:message</p>') !!}
                         </div>
                         <div class="form-group">
-                            {!! Form::label(trans('home_admin.Promotion_Price')) !!}
+                            {!! Form::label(trans('home_admin.Promotion_Price *')) !!}
                             {!! Form::text('Promotion_Price', null, ['class' => 'form-control']) !!}
                             {!! $errors->first('Promotion_Price', '<p class="message">:message</p>') !!}
                         </div>

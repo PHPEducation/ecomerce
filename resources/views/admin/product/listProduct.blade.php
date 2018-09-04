@@ -9,6 +9,7 @@
                     <h1 class="page-header">{{ trans('home_admin.Product') }}
                         <small>{{ trans('home_admin.List') }}</small>
                     </h1>
+                    <a href="{{ route('addProduct') }}" class="a_add">Add Product</a>
                 </div>
                 <!-- /.col-lg-12 -->
                 <table class="table table-striped table-bordered table-hover" id="dataTables-example">
@@ -45,6 +46,9 @@
                 </table>
             </div>
             <!-- /.row -->
+        </div>
+        <div class="paginate">
+            {{ $products->links() }}
         </div>
         <!-- /.container-fluid -->
     </div>

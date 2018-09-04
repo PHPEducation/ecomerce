@@ -13,7 +13,7 @@ class UserController extends Controller
     }
 
     public function getListUser() {
-        $users = User::all();
+        $users = User::paginate(config('app.paginates'));
 
         return view('admin.users.listUser', compact('users'));
     }
@@ -38,7 +38,7 @@ class UserController extends Controller
             $file = $req->file('avatar');
             $name = $file->getClientOriginalName();
             $nameAva = str_random(4)."_".$name;
-            $file->move('storage/img/users/', $nameAva);
+            $file->move(config('app.link_users'), $nameAva);
             $user->avatar = $nameAva;
         }
         else {
@@ -58,30 +58,32 @@ class UserController extends Controller
 
     public function postEditUser(UserRequest $req, $id)
     {
+        $user = User::findOrFail($id);
+
         if ($req->hasFile('avatar')) {
             $file = $req->file('avatar');
             $name = $file->getClientOriginalName();
             $nameAva = str_random(4) . "_". $name;
-            $file->move(config('app.link'), $nameAva);
+            $file->move(config('app.link_users'), $nameAva);
             $user->avatar = $nameAva;
         }
         else {
             $user->avatar = "";
         }
-        try {
-            $user = User::findOrFail($id);
-        } catch (ModelNotFoundException $e) {
 
-        }
+
         $user->name = $req->Username;
-        $user->password = bcrypt($req->Password);
         $user->phone = $req->Phone;
         $user->address = $req->Address;
         $user->note = $req->Note;
         $user->role = $req->role;
+
+        if (isset($req->Password)) {
+            $user->password = bcrypt($req->Password);
+        }
         $user->save();
 
-        return redirect('admin/users/editUser' . $id)->with('message', trans('home_admin.success'));
+        return redirect('admin/users/editUser/' . $id)->with('message', trans('home_admin.success'));
     }
     public function getDeleteUser($id)
     {

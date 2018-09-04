@@ -9,6 +9,7 @@
                     <h1 class="page-header">{{ trans('home_admin.Category') }}
                         <small>{{ trans('home_admin.List') }}</small>
                     </h1>
+                    <a href="{{ route('addCategory') }}" class="a_add">Add Category</a>
                     {!! Form::open(array('route' => 'importCategory', 'method' => 'POST', 'files' => 'true')) !!}
                         <div class="row">
                             <div class="col-xs-10 col-sm-10 col-md-10">
@@ -61,6 +62,9 @@
                     </table>
                 </div>
             </div>
+        </div>
+        <div class="paginate">
+            {{ $categories->links() }}
         </div>
     </div>
 </div>

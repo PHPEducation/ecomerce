@@ -2,7 +2,7 @@
 
 return [
 
-    'link' => 'storage/img/users/',
+    'link_users' => 'storage/img/users/',
     'img_name_length' => '4',
     'paginate' => '6',
     'pagination' => '8',

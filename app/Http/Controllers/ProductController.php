@@ -11,7 +11,7 @@ use App\Http\Requests\ProductRequest;
 class ProductController extends Controller
 {
     public function getListProduct() {
-        $products = Product::all();
+        $products = Product::paginate(config('app.paginates'));
 
         return view('admin.product.listProduct', compact('products'));
     }

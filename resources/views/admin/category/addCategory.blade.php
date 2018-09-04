@@ -18,12 +18,12 @@
                     @endif
                     {!! Form::open(['method' => 'POST', 'enctype' => 'multipart/form-data']) !!}
                         <div class="form-group">
-                            {!! Form::label(trans('home_admin.Name')) !!}
+                            {!! Form::label(trans('home_admin.Name *')) !!}
                             {!! Form::text('Name', null, ['class' => 'form-control', 'placeholder' => 'ex: news']) !!}
                             {!! $errors->first('Name', '<p class="message">:message</p>') !!}
                         </div>
                         <div class="form-group">
-                            {!! Form::label(trans('home_admin.Description')) !!}
+                            {!! Form::label(trans('home_admin.Description *')) !!}
                             {!! Form::text('Description', null, ['class' => 'form-control', 'placeholder' => 'ex: news']) !!}
                             {!! $errors->first('Description', '<p class="message">:message</p>') !!}
                         </div>

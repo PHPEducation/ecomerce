@@ -25,12 +25,13 @@ class UserRequest extends FormRequest
     {
         return [
             'Username' => 'required|min:3',
-            'Email' => 'required|email|unique:users,email',
-            'Password' => 'required|min:6|max:32',
-            'RePassword' => 'required|same:Password',
+            'Email' => 'email|unique:users,email',
+            'Password' => 'min:6|max:32',
+            'RePassword' => 'same:Password',
             'Phone' => 'required',
             'Address' => 'required',
             'avatar' => 'required|mimes:jpeg,jpg,png',
+            'role' => 'required',
         ];
     }
 }
