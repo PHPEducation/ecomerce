@@ -62,8 +62,7 @@ class PageController extends Controller
 
     public function getComment($id)
     {
-         $comments = Comment::where('product_id', $id)->orderBy('id', 'DESC')->first();;
-
+        $comment = Comment::where('product_id',$id)->orderBy('created_at','DESC')->limt(9);
         if ($request->ajax())
         {
             return view('Client.comment', compact('comments'));
@@ -110,7 +109,7 @@ class PageController extends Controller
         {
             if(Auth::attempt($credentials))
             {
-                return redirect()->back()->with(['flag'=>'success','message'=>'Đăng nhập thành công']);
+                return redirect()->route('trangchu')->with("Dang nhap thanh cong");
             }
             else
             {
@@ -230,6 +229,7 @@ class PageController extends Controller
         $comments->content = $req->content;
         $comments->product_id = $product_id;
         $comments->save();
+
         return response()->json();
     }
 }

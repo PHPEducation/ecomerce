@@ -29,7 +29,7 @@ Route::group(['prefix'=>'admin'], function() {
     });
 });
 
-Route::get('/index', 'PageController@getIndex')->name('trangchu');
+Route::get('/', 'PageController@getIndex')->name('trangchu');
 Route::get('/categorytype/{type}', 'PageController@categorytype')->name('loaisanpham');
 Route::get('/detailproduct/{id}', 'PageController@detailproduct')->name('chitietsanpham');
 Route::get('/contact', 'PageController@contact')->name('lienhe');

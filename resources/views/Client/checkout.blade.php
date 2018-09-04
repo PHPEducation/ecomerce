@@ -19,28 +19,30 @@
         {!! Form::open(['method' => 'POST','class' => 'beta-form-checkout']) !!}
             <div class="row">
                 <div class="col-sm-6">
-                    <h4>{{ trans('home.addToCart') }}</h4>
-                    <div class="space20">&nbsp;</div>
-                    <div class="form-block">
-                        {!! Form::label('name', trans('home.name'), ['class' => 'col-md-4 control-label']) !!}
-                        {!! Form::text('name', '' , ['class' => 'form-control', 'id' => 'name', 'name' => 'name']) !!}
-                    </div>
-                    <div class="form-block">
-                        {!! Form::label('email', trans('home.lbEmail'), ['class' => 'col-md-4 control-label']) !!}
-                        {!! Form::text('email', '' , ['class' => 'form-control', 'id' => 'email' , 'name' => 'email']) !!}
-                    </div>
-                    <div class="form-block">
-                        {!! Form::label('address', trans('home.lbaddress'), ['class' => 'col-md-4 control-label']) !!}
-                       {!! Form::text('address', '' , ['class' => 'form-control', 'id' => 'address', 'name' => 'address']) !!}
-                    </div>
-                    <div class="form-block">
-                        {!! Form::label('phone', trans('home.lbphone'), ['class' => 'col-md-4 control-label']) !!}
-                        {!! Form::text('phone', '' , ['class' => 'form-control', 'id' => 'phone' , 'name' => 'phone']) !!}
-                    </div>
-                    <div class="form-block">
-                         {!! Form::label('phone', trans('home.note'), ['class' => 'col-md-4 control-label']) !!}
-                        <textarea id="note" name ="note"></textarea>
-                    </div>
+                    @if(Auth::check())
+                        <h4>{{ trans('home.addToCart') }}</h4>
+                        <div class="space20">&nbsp;</div>
+                        <div class="form-block">
+                            {!! Form::label('name', trans('home.name'), ['class' => 'col-md-4 control-label']) !!}
+                            {!! Form::text('name', Auth::user()->name , ['class' => 'form-control', 'id' => 'name', 'name' => 'name']) !!}
+                        </div>
+                        <div class="form-block">
+                            {!! Form::label('email', trans('home.lbEmail'), ['class' => 'col-md-4 control-label']) !!}
+                            {!! Form::text('email', Auth::user()->email , ['class' => 'form-control', 'id' => 'email' , 'name' => 'email']) !!}
+                        </div>
+                        <div class="form-block">
+                            {!! Form::label('address', trans('home.lbaddress'), ['class' => 'col-md-4 control-label']) !!}
+                           {!! Form::text('address',  Auth::user()->address , ['class' => 'form-control', 'id' => 'address', 'name' => 'address']) !!}
+                        </div>
+                        <div class="form-block">
+                            {!! Form::label('phone', trans('home.lbphone'), ['class' => 'col-md-4 control-label']) !!}
+                            {!! Form::text('phone', Auth::user()->phone , ['class' => 'form-control', 'id' => 'phone' , 'name' => 'phone']) !!}
+                        </div>
+                        <div class="form-block">
+                             {!! Form::label('phone', trans('home.note'), ['class' => 'col-md-4 control-label']) !!}
+                            <textarea id="note" name ="note"></textarea>
+                        </div>
+                    @endif
                 </div>
                 <div class="col-sm-6">
                     <div class="your-order">
@@ -48,7 +50,7 @@
                         @if(Session::has('cart'))
                         <div class="your-order-body" style="padding: 0px 10px">
                             @foreach($product_carts as $product_cart)
-                            <div class="your-order-item">
+                                <div class="your-order-item">
                                     <div class="media">
                                         <img width="25%" src="{{ asset('image/product/' .$product_cart['item']['image'] ) }}" alt="" class="pull-left">
                                         <div class="media-body">
@@ -59,7 +61,7 @@
                                         </div>
                                     </div>
                                 </div>
-                                @endforeach
+                             @endforeach
                                 <div class="clearfix"></div>
                             </div>
                             @endif

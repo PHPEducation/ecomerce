@@ -40,12 +40,21 @@
                                 <p>{{ $product->description }}</p>
                             </div>
                             <div class="space20">&nbsp;</div>
-                            <div class="single-item-options">
-                                <a class="add-to-cart" href="{{ route('addToCart',$product->id ) }}"><i class="fa fa-shopping-cart"></i></a>
-                                <div class="clearfix"></div>
-                            </div>
+                            <p>số lượng</p>
+                            <form method="post">
+                                <div class="single-item-options">
+                                    <select class="wc-select" name="color">
+                                        <option value="1">1</option>
+                                        <option value="2">2</option>
+                                        <option value="3">3</option>
+                                        <option value="4">4</option>
+                                        <option value="5">5</option>
+                                    </select>
+                                    <a class="add-to-cart" href="{{ route('addToCart',$product->id ) }}"><i class="fa fa-shopping-cart"></i></a>
+                                    <div class="clearfix"></div>
+                                </div>
+                            </form>
                         </div>
-                    </div>
                     <div class="space40">&nbsp;</div>
                     @if(Auth::check())
                     @if(session('thong bao'))
@@ -53,8 +62,10 @@
                     @endif
                     <div class="woocommerce-tabs">
                         <ul class="tabs">
-                            <li><a href="#tab-reviews">{{ trans('home.Reviews') }}</a></li>
+                            <li><a href="#tab-description">Description</a></li>
+                            <li><a href="#tab-reviews">Reviews (0)</a></li>
                         </ul>
+
                         <div id="load-comment">
                             @include('Client.comment', ['comments' => $product->comments])
                         </div>
@@ -63,7 +74,7 @@
                                 <textarea name ="content"  id="text"></textarea>
                             </div>
                            {!! Form::submit( trans('home.send'), ['id' => 'commendsend']) !!}
-                            {!! Form::close() !!}
+                        {!! Form::close() !!}
                     </div>
                     @endif
                     <div class="space50">&nbsp;</div>
