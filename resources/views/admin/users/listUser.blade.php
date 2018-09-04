@@ -9,7 +9,7 @@
                     <h1 class="page-header">{{ trans('home_admin.User') }}
                         <small>{{ trans('home_admin.List') }}</small>
                     </h1>
-                    {!! Form::submit('Add', ['class' => 'btn btn-default btn_Add']) !!}
+                    <a href="{{ route('addUser') }}" class="a_add">Add User</a>
                 </div>
                 <!-- /.col-lg-12 -->
                 <table class="table table-striped table-bordered table-hover" id="dataTables-example">
@@ -52,6 +52,9 @@
                 </table>
             </div>
             <!-- /.row -->
+        </div>
+        <div class="paginate">
+            {{ $users->links() }}
         </div>
         <!-- /.container-fluid -->
     </div>
