@@ -44,6 +44,7 @@
     <!-- DataTables JavaScript -->
     <script src="{{ asset('admin_asset/bower_components/DataTables/media/js/jquery.dataTables.min.js') }}"></script>
     <script src="{{ asset('admin_asset/bower_components/datatables-plugins/integration/bootstrap/3/dataTables.bootstrap.min.js') }}"></script>
+    <script src="{{ asset('admin_asset/js/bootbox.min.js') }}"></script>
     <script src="{{ asset('js/app.js') }}"></script>
 </body>
 </html>

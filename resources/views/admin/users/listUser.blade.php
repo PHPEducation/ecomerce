@@ -44,7 +44,9 @@
                                 {{ "Member" }}
                                 @endif
                             <td>{{ $user->avatar }}</td> -->
-                            <td class="center"><i class="fa fa-trash-o  fa-fw"></i><a href="/admin/users/delete/{{ $user->id }}">{{ trans('home_admin.Delete') }}</a></td>
+                            <td class="center">
+                                <i class="fa fa-trash-o  fa-fw"></i>
+                                <a href="javascript:;" onclick="confirmRemove('{{ route('deleteUser', ['id' => $user->id]) }}')">{{ trans('home_admin.Delete') }}</a>
                             <td class="center"><i class="fa fa-pencil fa-fw"></i> <a href="/admin/users/editUser/{{ $user->id }}">{{ trans('home_admin.Edit') }}</a></td>
                         </tr>
                         @endforeach

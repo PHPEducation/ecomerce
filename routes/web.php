@@ -27,7 +27,7 @@ Route::group(['middleware'=>'adminLogin', 'prefix'=>'admin'], function() {
         Route::get('editUser/{id}', 'UserController@getEditUser')->name('editUser');
         Route::post('editUser/{id}', 'UserController@postEditUser');
 
-        Route::get('/delete/{id}', 'UserController@getDeleteUser');
+        Route::get('/delete/{id}', 'UserController@getDeleteUser')->name('deleteUser');
     });
     Route::group(['prefix'=>'product'], function() {
         Route::get('/listProduct', 'ProductController@getListProduct')->name('listProduct');
@@ -38,7 +38,7 @@ Route::group(['middleware'=>'adminLogin', 'prefix'=>'admin'], function() {
         Route::get('editProduct/{id}', 'ProductController@getEditProduct')->name('editProduct');
         Route::post('editProduct/{id}', 'ProductController@postEditProduct');
 
-        Route::get('/delete/{id}', 'ProductController@getDeleteProduct');
+        Route::get('/delete/{id}', 'ProductController@getDeleteProduct')->name('deleteProduct');
 
     });
     Route::group(['prefix'=>'category'], function() {
@@ -50,7 +50,7 @@ Route::group(['middleware'=>'adminLogin', 'prefix'=>'admin'], function() {
         Route::get('editCategory/{id}', 'CategoryController@getEditCategory')->name('editCategory');
         Route::post('editCategory/{id}', 'CategoryController@postEditCategory');
 
-        Route::get('/delete/{id}', 'CategoryController@getDeleteCategory');
+        Route::get('/delete/{id}', 'CategoryController@getDeleteCategory')->name('deleteCategory');
 
         Route::post('category-import', 'CategoryController@importCategory')->name('importCategory');
     });
