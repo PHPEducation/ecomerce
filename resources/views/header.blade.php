@@ -45,7 +45,7 @@
                         <div class="beta-dropdown cart-body">
                             @foreach($product_carts as $product_cart)
                             <div class="cart-item">
-                                <a class="cart-item-edit" href="#"><i class="fa fa-pencil"></i></a>
+                                <a class="cart-item-edit" href="{{ route('viewCart') }}"><i class="fa fa-pencil"></i></a>
                                 <a class="cart-item-delete" href="{{ route('delItemCart' ,$product_cart['item']['id'] )}}"><i class="fa fa-times"></i></a>
                                 <div class="media">
                                     <a class="pull-left" href="#"><img src="{{ asset('image/product/' .$product_cart['item']['image'] ) }}" alt=""></a>

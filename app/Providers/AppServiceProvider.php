@@ -24,7 +24,7 @@ class AppServiceProvider extends ServiceProvider
             $view->with('typecategories', $typecategories);
         });
 
-        view()->composer(['header', 'Client.checkout'], function($view){
+        view()->composer(['header', 'Client.checkout','Client.cart'], function($view){
             if(Session('cart'))
             {
                 $oldCart = Session::get('cart');

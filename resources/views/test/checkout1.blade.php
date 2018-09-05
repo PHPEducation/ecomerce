@@ -41,11 +41,6 @@
                         <div class="form-block">
                              {!! Form::label('phone', trans('home.note'), ['class' => 'col-md-4 control-label']) !!}
                             <textarea id="note" name ="note"></textarea>
-                            @if ($errors->has('note'))
-                                    <div class="help-block" style ="padding-left: 200px;">
-                                        <strong style ="color:red;">{{ $errors->first('note') }}</strong>
-                                    </div>
-                            @endif
                         </div>
                     @endif
                 </div>
@@ -60,9 +55,9 @@
                                         <img width="25%" src="{{ asset('image/product/' .$product_cart['item']['image'] ) }}" alt="" class="pull-left">
                                         <div class="media-body">
                                             <p class="font-large"></p>
-                                            <h6 class="color-gray your-order-info" style="font-size:18px; font-weight:bold;">{{ $product_cart['item']['name'] }}</h6>
-                                            <span class="color-gray your-order-info" style ="font-size:16px;">{{ $product_cart['qty'] }}</span>
-                                            <span class="color-gray your-order-info" style ="font-size:16px;">{{ number_format($product_cart['item']['price']) }}</span>
+                                            <span class="color-gray your-order-info">{{ $product_cart['item']['name'] }}</span>
+                                            <span class="color-gray your-order-info">{{ $product_cart['qty'] }}</span>
+                                            <span class="color-gray your-order-info">{{ $product_cart['item']['price'] }}</span>
                                         </div>
                                     </div>
                                 </div>
@@ -72,7 +67,7 @@
                             @endif
                             <div class="your-order-item">
                                 <div class="pull-left"><p class="your-order-f18">{{ trans('home.total') }}:</p></div>
-                                <div class="pull-right"><h5 class="color-black">{{ number_format(Session('cart')->totalPrice) }}</h5></div>
+                                <div class="pull-right"><h5 class="color-black">{{ Session('cart')->totalPrice }}</h5></div>
                                 <div class="clearfix"></div>
                             </div>
                         </div>

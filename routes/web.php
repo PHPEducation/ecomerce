@@ -42,6 +42,8 @@ Route::get('/checkout','PageController@checkout')->name('dathang');
 Route::post('/checkout', 'PageController@postCheckOut')->name('order');
 Route::get('/viewCart', 'PageController@viewCart')->name('viewCart');
 Route::get('/addToCart/{id}', 'PageController@addToCart')->name('addToCart');
+Route::post('/upDateCart/{id}', 'PageController@upDateCart')->name('upDateCart');
+
 Route::get('/delItemCart/{id}', 'PageController@delItemCart')->name('delItemCart');
 Route::get('/searchproduct', 'PageController@searchProduct')->name('searchProduct');
 Route::get('/logout', 'PageController@postLogout')->name('Logout');
@@ -49,4 +51,6 @@ Route::get('/comments/{id}' , 'PageController@getComment');
 Route::post('/comments/{id}', 'PageController@comments');
 Route::get('/auth/facebook', 'SocialAuthController@redirectToProvider');
 Route::get('/auth/facebook/callback', 'SocialAuthController@handleProviderCallback');
+
+
 

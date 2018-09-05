@@ -17,7 +17,7 @@ class Cart
 	}
 
 	public function add($item, $id){
-		$giohang = ['qty'=>0, 'price' => $item->price, 'item' => $item];
+		$giohang = ['qty'=> 0, 'price' => $item->price, 'item' => $item];
 		if($this->items){
 			if(array_key_exists($id, $this->items)){
 				$giohang = $this->items[$id];
@@ -29,6 +29,7 @@ class Cart
 		$this->totalQty ++;
 		$this->totalPrice += $item->price;
 	}
+
 
 	public function reduceByOne($id){
 		$this->items[$id]['qty']--;

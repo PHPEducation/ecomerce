@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Http\Requests\validationLoginRequest;
 use App\Http\Requests\validationRegisterRequest;
+use App\Http\Requests\CartRequest;
 use App\Slide;
 use App\Product;
 use App\Category;
@@ -165,6 +166,31 @@ class PageController extends Controller
 
     }
 
+    public function updateCart(Request $cartdata, $id)
+    {
+        $cart = Session::get('cart');
+         // dd($id);
+       foreach($cart->items as $key => $item)
+       {
+            if($item['item']['id'] == $id){
+                $k = $key;
+
+            $qty = $cartdata->qty;
+            $item['qty'] = $qty;
+            $item['total'] = $item['price'] * $qty;
+            $cart->items[$k] = $item;
+
+            }
+
+        }
+
+        Session::put('cart', $cart);
+
+
+
+        return redirect()->back();
+    }
+
     public function delItemCart($id)
     {
         $oldCart = Session('cart') ? Session::get('cart') : null;
@@ -188,7 +214,7 @@ class PageController extends Controller
         return redirect()->route('trangchu');
     }
 
-    public function postCheckOut(Request $req)
+    public function postCheckOut(CartRequest $req)
     {
         $cart = Session::get('cart');
 
@@ -219,6 +245,8 @@ class PageController extends Controller
         }
         return redirect()->back()->with('thongbao', 'dat hang thanh cong');
     }
+
+
 
     public function comments($id, Request $req)
     {
