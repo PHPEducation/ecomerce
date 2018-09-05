@@ -11,10 +11,10 @@
                  <ul class="top-details menu-beta l-inline">
                     @if(Auth::check())
                         <li><a href="">Chào bạn {{ Auth::user()->name }}</a></li>
-                        <li><a href="{{ route('Logout') }}">Đăng xuất</a></li>
+                        <li><a href="{{ route('logout') }}">Đăng xuất</a></li>
                     @else
-                        <li><a href="{{ route('dangnhap') }}">{{ trans('home.login') }}</a></li>
-                        <li><a href="{{ route('dangky')}}">{{ trans('home.register') }}</a></li>
+                        <li><a href="{{ route('login') }}">{{ trans('home.login') }}</a></li>
+                        <li><a href="{{ route('register')}}">{{ trans('home.register') }}</a></li>
                     @endif
                  </ul>
             </div>
