@@ -55,4 +55,5 @@
         'RePassword *' => 'RePassword *',
         'Description *' => 'Description *',
         'Description' => 'Description',
+        'Cakes' => 'Cakes',
     ];

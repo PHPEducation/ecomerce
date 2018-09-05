@@ -74,4 +74,6 @@ Route::post('/comments/{id}', 'PageController@comments');
 Route::get('/auth/facebook', 'SocialAuthController@redirectToProvider');
 Route::get('/auth/facebook/callback', 'SocialAuthController@handleProviderCallback');
 
+Auth::routes();
 
+Route::get('/home', 'HomeController@index')->name('home');

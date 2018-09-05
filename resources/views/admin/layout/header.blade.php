@@ -16,12 +16,18 @@
                 <i class="fa fa-user fa-fw"></i>  <i class="fa fa-caret-down"></i>
             </a>
             <ul class="dropdown-menu dropdown-user">
-                <li><a href="#"><i class="fa fa-user fa-fw"></i>{{ trans('home_admin.User Profile') }}</a>
-                </li>
-                <li><a href="#"><i class="fa fa-gear fa-fw"></i>{{ trans('home_admin.Settings') }}</a>
+                <li>
+                    @if(Auth::check())
+                        <a title="Log In" href="{{ route('login')  }}">{{ Auth::user()->name }}</a>
+                    @else
+                        <a title="Log In" href="{{ route('login') }}">{{ __('LogIn') }}</a>
+                    @endif
                 </li>
                 <li class="divider"></li>
-                <li><a href="login.html"><i class="fa fa-sign-out fa-fw"></i> {{ trans('home_admin.Logout') }}</a>
+                <li>
+                    @if(Auth::check())
+                        <a title="Log Out" href="{{ route('logout') }}">{{ __('LogOut') }}</a>
+                    @endif
                 </li>
             </ul>
         </li>
