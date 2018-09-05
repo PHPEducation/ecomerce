@@ -12,11 +12,13 @@
 */
 
 
-Route::get('/admin', function () {
-    return view('master_admin');
-});
-Route::group(['prefix'=>'admin'], function() {
+
+Route::group(['middleware'=>'adminLogin', 'prefix'=>'admin'], function() {
+    Route::get('/', function () {
+        return view('master_admin');
+    });
     Route::group(['prefix'=>'users'], function() {
+
         Route::get('/listUser', 'UserController@getListUser')->name('listUser');
 
         Route::get('addUser', 'UserController@getAddUser')->name('addUser');
