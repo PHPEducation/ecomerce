@@ -38,7 +38,9 @@
                             <td>{{ $product->promotion_price }}</td>
                             <td><img class="img_ava" src="{{ asset("storage/img/products/$product->image" ) }}"></td>
                             <td>{{ $product->unit }}</td>
-                            <td class="center"><i class="fa fa-trash-o  fa-fw"></i><a href="/admin/product/delete/{{ $product->id }}"> {{ trans('home_admin.Delete') }}</a></td>
+                            <td class="center">
+                                <i class="fa fa-trash-o  fa-fw"></i>
+                                <a href="javascript:;" onclick="confirmRemove('{{ route('deleteProduct', ['id' => $product->id]) }}')">{{ trans('home_admin.Delete') }}</a>
                             <td class="center"><i class="fa fa-pencil fa-fw"></i> <a href="/admin/product/editProduct/{{ $product->id }}">{{ trans('home_admin.Edit') }}</a></td>
                         </tr>
                         @endforeach

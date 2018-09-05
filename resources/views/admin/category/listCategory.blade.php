@@ -51,7 +51,8 @@
                                 <td>{{ $category->description }}</td>
                                 <td><img class="img_image img-reponsive" src="{{ asset("storage/img/categories/$category->image" ) }}"></td>
                                 <td class="center">
-                                    <i class="fa fa-trash-o  fa-fw"></i><a href="/admin/category/delete/{{ $category->id }}"> {{ trans('home_admin.Delete') }}</a>
+                                    <i class="fa fa-trash-o  fa-fw"></i>
+                                    <a href="javascript:;" onclick="confirmRemove('{{ route('deleteCategory', ['id' => $category->id]) }}')">{{ trans('home_admin.Delete') }}</a>
                                 </td>
                                 <td class="center">
                                     <i class="fa fa-pencil fa-fw"></i> <a href="/admin/category/editCategory/{{ $category->id }}">{{ trans('home_admin.Edit') }}</a>
