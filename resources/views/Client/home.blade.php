@@ -43,7 +43,7 @@
                                     @endif
                                     <div class="single-item-header">
                                         <a href="{{ route('detailproduct', $newproduct->id ) }}">
-                                            <img src="{{ asset('image/product/' .$newproduct->image) }}" alt="" height="250px;">
+                                            <img src="{{ asset(config('app.link') .$newproduct->image) }}" alt="" height="250px;">
                                         </a>
                                     </div>
                                     <div class="single-item-body">
@@ -85,7 +85,7 @@
                                 <div class="single-item">
                                     <div class="single-item-header">
                                          <a href="{{ route('detailproduct', $topproduct->id) }}">
-                                            <img src="{{ asset('image/product/' . $topproduct->image )}}" alt="" style="height: 250px;">
+                                            <img src="{{ asset(config('app.link') . $topproduct->image )}}" alt="" style="height: 250px;">
                                         </a>
                                     </div>
                                     <div class="single-item-body">

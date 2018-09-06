@@ -62,7 +62,7 @@ Route::get('/categorytype/{type}', 'PageController@categorytype')->name('categor
 Route::get('/detailproduct/{id}', 'PageController@detailproduct')->name('detailproduct');
 
 Route::get('/contact', 'PageController@contact')->name('lienhe');
-Route::get('/login', 'PageController@login')->name('dangnhap');
+// Route::get('/login', 'PageController@login')->name('dangnhap');
 Route::get('/register', 'PageController@register')->name('dangky');
 Route::post('/login', 'PageController@postLogin')->name('login');
 Route::post('/register', 'PageController@postRegister');
@@ -77,9 +77,11 @@ Route::get('/delItemCart/{id}', 'PageController@delItemCart')->name('delItemCart
 Route::get('/searchproduct', 'PageController@searchProduct')->name('searchProduct');
 Route::get('/logout', 'PageController@postLogout')->name('Logout');
 Route::post('/comments/{id}', 'PageController@comments');
+Route::get('/comments/{id}' , 'PageController@getComment');
+
+
 Route::get('/auth/facebook', 'SocialAuthController@redirectToProvider');
 Route::get('/auth/facebook/callback', 'SocialAuthController@handleProviderCallback');
-
 
 Route::post('forget-pwd-email', 'UserController@forgetPwdEmail')->name('forget-pwd.email');
 Route::get('reset-pwd/{token}', 'UserController@resetPwd');

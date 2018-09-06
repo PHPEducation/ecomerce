@@ -38,15 +38,16 @@
                             <td>{{ $user->note }}</td>
                             <td>{{ $user->role }}</td>
                             <td><img class="img_ava" src="{{ asset("storage/img/users/$user->avatar" ) }}"></td>
-                                <!-- @if($user->role == 1)
+                               {{--  @if($user->role == 1)
                                     {{ "Admin" }}
                                 @else
                                 {{ "Member" }}
                                 @endif
-                            <td>{{ $user->avatar }}</td> -->
+                            <td>{{ $user->avatar }}</td> --}}
                             <td class="center">
                                 <i class="fa fa-trash-o  fa-fw"></i>
                                 <a href="javascript:;" onclick="confirmRemove('{{ route('deleteUser', ['id' => $user->id]) }}')">{{ trans('home_admin.Delete') }}</a>
+                            </td>
                             <td class="center"><i class="fa fa-pencil fa-fw"></i> <a href="/admin/users/editUser/{{ $user->id }}">{{ trans('home_admin.Edit') }}</a></td>
                         </tr>
                         @endforeach

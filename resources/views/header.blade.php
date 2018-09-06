@@ -48,7 +48,8 @@
                                 <a class="cart-item-edit" href="{{ route('viewCart') }}"><i class="fa fa-pencil"></i></a>
                                 <a class="cart-item-delete" href="{{ route('delItemCart' ,$product_cart['item']['id'] )}}"><i class="fa fa-times"></i></a>
                                 <div class="media">
-                                    <a class="pull-left" href="#"><img src="{{ asset('image/product/' .$product_cart['item']['image'] ) }}" alt=""></a>
+                                    <a class="pull-left" href="#"><img src="{{ asset(config('app.link')
+                                     .$product_cart['item']['image'] ) }}" alt=""></a>
                                     <div class="media-body">
                                         <span class="cart-item-title">{{ $product_cart['item']['name'] }}</span>
                                         <span class="cart-item-amount">{{ $product_cart['qty'] }}*<span>{{ $product_cart['item']['price'] }}</span></span>

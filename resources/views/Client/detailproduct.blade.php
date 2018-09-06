@@ -113,14 +113,17 @@
 <script
   src="https://code.jquery.com/jquery-3.3.1.min.js"
   integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
-  crossorigin="anonymous"></script>
+  crossorigin="anonymous">
+</script>
 <script type="text/javascript">
 $(document).ready(function(){
+
     $.ajaxSetup({
         headers: {
             'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
         }
     });
+
   $('#commendsend').on('click',function(event){
         event.preventDefault();
         var form = $('#text').serializeArray()[0].value;
@@ -135,6 +138,7 @@ $(document).ready(function(){
             },
             success: function(data){
                 $('#load-comment').append('<div>' + form  + '</div>');
+                console.log($data);
             },
             error: function(error){
             }

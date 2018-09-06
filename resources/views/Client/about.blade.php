@@ -22,13 +22,13 @@
 
             <div class="history-slider">
                 <div class="history-navigation">
-                    <a data-slide-index="0" href="blog_with_2sidebars_type_e.html" class="circle"><span class="auto-center">2003</span></a>
-                    <a data-slide-index="1" href="blog_with_2sidebars_type_e.html" class="circle"><span class="auto-center">2004</span></a>
-                    <a data-slide-index="2" href="blog_with_2sidebars_type_e.html" class="circle"><span class="auto-center">2005</span></a>
-                    <a data-slide-index="3" href="blog_with_2sidebars_type_e.html" class="circle"><span class="auto-center">2007</span></a>
-                    <a data-slide-index="4" href="blog_with_2sidebars_type_e.html" class="circle"><span class="auto-center">2009</span></a>
-                    <a data-slide-index="5" href="blog_with_2sidebars_type_e.html" class="circle"><span class="auto-center">2011</span></a>
-                    <a data-slide-index="6" href="blog_with_2sidebars_type_e.html" class="circle"><span class="auto-center">2014</span></a>
+                    <a data-slide-index="0" href="#" class="circle"><span class="auto-center">2003</span></a>
+                    <a data-slide-index="1" href="#" class="circle"><span class="auto-center">2004</span></a>
+                    <a data-slide-index="2" href="#" class="circle"><span class="auto-center">2005</span></a>
+                    <a data-slide-index="3" href="#" class="circle"><span class="auto-center">2007</span></a>
+                    <a data-slide-index="4" href="#" class="circle"><span class="auto-center">2009</span></a>
+                    <a data-slide-index="5" href="#" class="circle"><span class="auto-center">2011</span></a>
+                    <a data-slide-index="6" href="#" class="circle"><span class="auto-center">2014</span></a>
                 </div>
             </div>
         </div>
