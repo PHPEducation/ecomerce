@@ -76,6 +76,10 @@ Route::post('/comments/{id}', 'PageController@comments');
 Route::get('/auth/facebook', 'SocialAuthController@redirectToProvider');
 Route::get('/auth/facebook/callback', 'SocialAuthController@handleProviderCallback');
 
+Route::post('forget-pwd-email', 'UserController@forgetPwdEmail')->name('forget-pwd.email');
+Route::get('reset-pwd/{token}', 'UserController@resetPwd');
+Route::post('auth-reset-password', 'UserController@authResetPassword')->name('auth.reset-pwd');
+
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
