@@ -9,6 +9,7 @@ return [
     'link' => 'image/product/',
     'paginates' =>'4',
     'comparefix' => '0',
+    'limit' => '9',
 
     /*--------------------------------------------------------------------------
     | Application Name

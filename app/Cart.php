@@ -26,9 +26,10 @@ class Cart
 		$giohang['qty'] += isset($req->$giohang['qty']) ? $req->$giohang['qty'] : 1;
 		$giohang['price'] = $item->price * $giohang['qty'];
 		$this->items[$id] = $giohang;
-		$this->totalQty++;
+		$this->totalQty ++;
 		$this->totalPrice += $item->price;
 	}
+
 
 	public function reduceByOne($id){
 		$this->items[$id]['qty']--;

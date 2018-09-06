@@ -41,6 +41,7 @@
                 </div>
             </div>
         </form>
+         <a href="{{ url('auth/facebook') }}">Facebook Login</a>
     </div>
 </div>
 @endsection

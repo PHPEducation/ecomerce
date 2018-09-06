@@ -56,9 +56,11 @@ Route::group(['middleware'=>'adminLogin', 'prefix'=>'admin'], function() {
     });
 });
 
-Route::get('/index', 'PageController@getIndex')->name('trangchu');
+
+Route::get('/', 'PageController@getIndex')->name('trangchu');
 Route::get('/categorytype/{type}', 'PageController@categorytype')->name('categorytype');
 Route::get('/detailproduct/{id}', 'PageController@detailproduct')->name('detailproduct');
+
 Route::get('/contact', 'PageController@contact')->name('lienhe');
 Route::get('/login', 'PageController@login')->name('dangnhap');
 Route::get('/register', 'PageController@register')->name('dangky');
@@ -69,12 +71,15 @@ Route::get('/checkout','PageController@checkout')->name('dathang');
 Route::post('/checkout', 'PageController@postCheckOut')->name('order');
 Route::get('/viewCart', 'PageController@viewCart')->name('viewCart');
 Route::get('/addToCart/{id}', 'PageController@addToCart')->name('addToCart');
+Route::post('/upDateCart/{id}', 'PageController@upDateCart')->name('upDateCart');
+
 Route::get('/delItemCart/{id}', 'PageController@delItemCart')->name('delItemCart');
 Route::get('/searchproduct', 'PageController@searchProduct')->name('searchProduct');
 Route::get('/logout', 'PageController@postLogout')->name('Logout');
 Route::post('/comments/{id}', 'PageController@comments');
 Route::get('/auth/facebook', 'SocialAuthController@redirectToProvider');
 Route::get('/auth/facebook/callback', 'SocialAuthController@handleProviderCallback');
+
 
 Route::post('forget-pwd-email', 'UserController@forgetPwdEmail')->name('forget-pwd.email');
 Route::get('reset-pwd/{token}', 'UserController@resetPwd');
@@ -83,3 +88,4 @@ Route::post('auth-reset-password', 'UserController@authResetPassword')->name('au
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
+
