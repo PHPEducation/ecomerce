@@ -23,12 +23,12 @@ class AppServiceProvider extends ServiceProvider
             $typecategories = Category::all();
             $view->with('typecategories', $typecategories);
         });
-        view()->composer(['header', 'Client.checkout'], function($view){
-            if(Session('cart'))
+        view()->composer(['header', 'Client.checkout', 'Client.cart'], function($view){
+            if (Session('cart'))
             {
                 $oldCart = Session::get('cart');
                 $cart = new Cart($oldCart);
-                $view->with(['cart' => Session::get('cart'), 'product_carts' => $cart->items, 'totalPrice'=> $cart->totalPrice, 'totalQty'=> $cart->totalQty ]);
+                $view->with(['cart' => Session::get('cart'), 'product_carts' => $cart->items, 'totalPrice' => $cart->totalPrice, 'totalQty' => $cart->totalQty ]);
             }
         });
     }

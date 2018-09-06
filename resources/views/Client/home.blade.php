@@ -49,7 +49,7 @@
                                     <div class="single-item-body">
                                         <p class="single-item-title">{{ $newproduct->name }}</p>
                                         <p class="single-item-price">
-                                            @if($newproduct->promotion_price ==0)
+                                            @if($newproduct->promotion_price == 0 )
                                                 <span class="">{{ number_format($newproduct->price) }}</span>
                                             @else
                                                 <span class="flash-del">{{ number_format($newproduct->price) }}</span>
@@ -91,7 +91,7 @@
                                     <div class="single-item-body">
                                         <p class="single-item-title">{{ $topproduct->name }}</p>
                                         <p class="single-item-price">
-                                            @if($topproduct->promotion_price ==0)
+                                            @if($topproduct->promotion_price == 0 )
                                                 <span class="">{{ $topproduct->price }}</span>
                                             @else
                                                 <span class="flash-del">{{ $topproduct->price }}</span>
