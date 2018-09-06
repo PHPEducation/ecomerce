@@ -62,14 +62,29 @@ class PageController extends Controller
 
     public function getComment($id)
     {
+
          $comments = Comment::where('product_id', $id)
                             ->orderBy('id', 'DESC')
-                            ->first();
-        $comment = Comment::where('product_id', $id)->orderBy('created_at', 'DESC')->limt(config('app.limit'));
+                            ->first();;
+
         if ($request->ajax())
         {
             return view('Client.comment', compact('comments'));
         }
+
+    }
+
+    public function comments($id, Request $req)
+    {
+        $comments = new Comment;
+        $product_id = $id;
+        $comments->user_id  = Auth::user()->id;
+        $product = Product::find($id);
+        $comments->content = $req->content;
+        $comments->product_id = $product_id;
+        $comments->save();
+
+        return response()->json();
     }
 
 
@@ -203,17 +218,6 @@ class PageController extends Controller
         return redirect()->back()->with('thongbao', 'dat hang thanh cong');
     }
 
-    public function comments($id, Request $req)
-    {
-        $comments = new Comment;
-        $product_id = $id;
-        $comments->user_id  = Auth::user()->id;
-        $product = Product::find($id);
-        $comments->content = $req->content;
-        $comments->product_id = $product_id;
-        $comments->save();
 
-        return response()->json();
-    }
 }
 

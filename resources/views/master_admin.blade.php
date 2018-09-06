@@ -28,7 +28,6 @@
         @yield('content')
     </div>
     <!-- /#wrapper -->
-
     <!-- jQuery -->
     <script src="{{ asset('admin_asset/bower_components/jquery/dist/jquery.min.js') }}"></script>
 

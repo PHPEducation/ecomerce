@@ -15,6 +15,7 @@
     <link rel="stylesheet" title="style" href="{{ asset('assets/dest/css/style.css') }}">
     <link rel="stylesheet" href="{{ asset('assets/dest/css/animate.css') }}">
     <link rel="stylesheet" title="style" href="{{ asset('assets/dest/css/huong-style.css') }}">
+
 </head>
 <body>
     @include('header')

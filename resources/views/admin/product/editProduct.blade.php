@@ -52,6 +52,11 @@
                             {!! Form::text('Unit', $product->unit, ['class' => 'form-control', 'placeholder' => 'Please Enter Unit']) !!}
                             {!! $errors->first('Unit', '<p class="message">:message</p>') !!}
                         </div>
+                        <div class="form-group">
+                            {!! Form::label('Status') !!}
+                            {!! Form::text('Status', $product->status, ['class' => 'form-control', 'placeholder' => 'Please Enter Status']) !!}
+                            {!! $errors->first('Status', '<p class="message">:message</p>') !!}
+                        </div>
                         {!! Form::submit('Edit', ['class' => 'btn btn-default']) !!}
                         {!! Form::reset('Reset', ['class' => 'btn btn-default']) !!}
                     {!! Form::close() !!}

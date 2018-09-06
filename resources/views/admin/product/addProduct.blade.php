@@ -51,6 +51,11 @@
                             {!! Form::text('Unit', null, ['class' => 'form-control']) !!}
                             {!! $errors->first('Unit', '<p class="message">:message</p>') !!}
                         </div>
+                        <div class="form-group">
+                            {!! Form::label(trans('home_admin.Status')) !!}
+                            {!! Form::text('Status', null, ['class' => 'form-control']) !!}
+                            {!! $errors->first('Status', '<p class="message">:message</p>') !!}
+                        </div>
                         {!! Form::submit('Add', ['class' => 'btn btn-default']) !!}
                         {!! Form::reset('Reset', ['class' => 'btn btn-default']) !!}
                     {!! Form::close() !!}

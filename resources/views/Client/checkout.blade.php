@@ -57,7 +57,7 @@
                             @foreach($product_carts as $product_cart)
                                 <div class="your-order-item">
                                     <div class="media">
-                                        <img width="25%" src="{{ asset('image/product/' .$product_cart['item']['image'] ) }}" alt="" class="pull-left">
+                                        <img width="25%" src="{{ asset(config('app.link') .$product_cart['item']['image'] ) }}" alt="" class="pull-left">
                                         <div class="media-body">
                                             <p class="font-large"></p>
                                             <h6 class="color-gray your-order-info" style="font-size:18px; font-weight:bold;">{{ $product_cart['item']['name'] }}</h6>
