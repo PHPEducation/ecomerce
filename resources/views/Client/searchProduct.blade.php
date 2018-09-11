@@ -20,7 +20,7 @@
                                         @endif
                                         <div class="single-item-header">
                                             <a href="{{ route('detailproduct', $searchProduct->id ) }}">
-                                                <img src="{{ asset('image/product/' .$searchProduct->image) }}" alt="" height="250px;">
+                                                <img src="{{ asset(config('app.link') .$searchProduct->image) }}" alt="" height="250px;">
                                             </a>
                                         </div>
                                         <div class="single-item-body">

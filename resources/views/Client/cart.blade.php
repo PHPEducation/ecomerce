@@ -37,7 +37,7 @@
                             <tr class="cart_item">
                                 <td class="product-name">
                                     <div class="media">
-                                        <img src="{{ asset('image/product/' .$product_cart['item']['image'] ) }}" alt="" width="250px;" >
+                                        <img src="{{ asset(config('app.link') .$product_cart['item']['image'] ) }}" alt="" width="250px;" >
                                         <div class="media-body">
                                             <p class="font-large table-title"></p>
                                             <p class="table-option"></p>
