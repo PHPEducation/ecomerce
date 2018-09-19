@@ -31,6 +31,7 @@ class ProductRequest extends FormRequest
             'Promotion_Price' => 'required',
             'Unit' => 'required',
             'image' => 'required|mimes:jpeg,jpg,png',
+            'Status' => 'required',
         ];
     }
 }

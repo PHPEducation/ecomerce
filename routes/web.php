@@ -22,7 +22,7 @@ Route::group(['middleware'=>'adminLogin', 'prefix'=>'admin'], function() {
         Route::get('/listUser', 'UserController@getListUser')->name('listUser');
 
         Route::get('addUser', 'UserController@getAddUser')->name('addUser');
-        Route::post('addUser', 'UserController@postaddUser');
+        Route::post('addUser', 'UserController@postAddUser');
 
         Route::get('editUser/{id}', 'UserController@getEditUser')->name('editUser');
         Route::post('editUser/{id}', 'UserController@postEditUser');

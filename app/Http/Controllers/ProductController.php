@@ -30,6 +30,7 @@ class ProductController extends Controller
         $product->price = $req->Price;
         $product->promotion_price = $req->Promotion_Price;
         $product->unit = $req->Unit;
+        $product->status = $req->Status;
         if ($req->hasFile('image')) {
             $file = $req->file('image');
             $name = $file->getClientOriginalName();
@@ -66,6 +67,7 @@ class ProductController extends Controller
         $product->price = $req->Price;
         $product->promotion_price = $req->Promotion_Price;
         $product->unit = $req->Unit;
+        $product->status = $req->Status;
         if ($req->hasFile('image')) {
             $file = $req->file('image');
             $name = $file->getClientOriginalName();
